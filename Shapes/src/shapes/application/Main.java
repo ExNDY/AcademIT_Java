@@ -1,4 +1,4 @@
-package app.wcrtv.oop.shapes;
+package shapes.application;
 
 public class Main {
     public static void main(String[] args) {
