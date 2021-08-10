@@ -26,7 +26,7 @@ public class Main {
         System.out.println("-----Base task was tested-----");
         System.out.println("Intersection");
 
-        Range secondRange = new Range (-3.6, -3.0);
+        Range secondRange = new Range (2.4, 9);
         Range newRange = range.intersection(secondRange);
 
         if (newRange != null){
@@ -37,8 +37,7 @@ public class Main {
 
         System.out.println("Merge of range");
 
-        Range[] rangeArray = new Range[2];
-                rangeArray = range.merge(secondRange);
+        Range[] rangeArray = range.merge(secondRange);
 
         if (rangeArray[1] == null){
             System.out.println("Merged range: [" + rangeArray[0].getFrom() + ";" + rangeArray[0].getTo() + "]");

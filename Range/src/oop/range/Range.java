@@ -37,7 +37,7 @@ public class Range {
     }
 
     public Range intersection(Range range) {
-        if (range.getFrom() == to || range.getTo() == from){
+        if (range.getFrom() == to || range.getTo() == from) {
             return null;
         }
 
@@ -47,7 +47,7 @@ public class Range {
         if (from < range.getFrom() && range.getFrom() < to) {
             newRange.setFrom(range.getFrom());
 
-            if (from < range.getTo() && range.getTo() < to){
+            if (from < range.getTo() && range.getTo() < to) {
                 newRange.setTo(range.getTo());
             } else {
                 newRange.setTo(to);
@@ -67,7 +67,7 @@ public class Range {
         if (range.getFrom() < from && from < range.getTo()) {
             newRange.setFrom(from);
 
-            if (range.getFrom() < to && to < range.getTo()){
+            if (range.getFrom() < to && to < range.getTo()) {
                 newRange.setTo(to);
             } else {
                 newRange.setTo(range.getTo());
@@ -89,9 +89,15 @@ public class Range {
     public Range[] merge(Range range) {
         Range[] newRange = new Range[2];
 
-        if (isInside(range.getFrom()) && isInside(range.getTo())){
-            Range firstRange = new Range(from, to);
-            newRange[0] = firstRange;
+        if (isInside(range.getFrom()) && isInside(range.getTo())) {
+            newRange[0] = new Range(from, to);
+        } else if (isInside(range.getTo()) && !isInside(range.getFrom())) {
+            newRange[0] = new Range(range.getFrom(), to);
+        } else if (isInside(range.getFrom()) && !isInside(range.getTo())) {
+            newRange[0] = new Range(from, range.getTo());
+        } else {
+            newRange[0] = new Range(from, to);
+            newRange[1] = range;
         }
 
         return newRange;
