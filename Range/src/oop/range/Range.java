@@ -102,4 +102,27 @@ public class Range {
 
         return newRange;
     }
+
+    public Range[] difference(Range range) {
+        Range[] newRange = new Range[2];
+
+        if ((from < range.getFrom() && range.getFrom() < to) && (from < range.getTo() && range.getTo() < to)) {
+            newRange[0] = new Range(from, range.getFrom());
+            newRange[1] = new Range(range.getTo(), to);
+        }
+
+        if ((from < range.getFrom() && range.getFrom() < to) && !(from < range.getTo() && range.getTo() < to)){
+            newRange[0] = new Range(from, range.getFrom());
+        }
+
+        if (!(from < range.getFrom() && range.getFrom() < to) && (from < range.getTo() && range.getTo() < to)){
+            newRange[0] = new Range(range.getTo(), to);
+        }
+
+        if (!(from < range.getFrom() && range.getFrom() < to) && !(from < range.getTo() && range.getTo() < to)){
+            return null;
+        }
+
+        return newRange;
+    }
 }
