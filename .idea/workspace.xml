@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Range task. Merge complete">
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Range task. Complete">
+      <change afterPath="$PROJECT_DIR$/Shapes/src/oop/shapes/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shapes/src/oop/shapes/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shapes/src/oop/shapes/Triangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Range/src/oop/range/Range.java" beforeDir="false" afterPath="$PROJECT_DIR$/Range/src/oop/range/Range.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Range/src/range/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Range/src/range/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/oop/shapes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/oop/shapes/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/shapes/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/shapes/application/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628591243836</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Range task. Complete">
+      <created>1628594291204</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1628594291204</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +170,7 @@
     <MESSAGE value="Range task. step1" />
     <MESSAGE value="Range task. Intersection complete" />
     <MESSAGE value="Range task. Merge complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Range task. Merge complete" />
+    <MESSAGE value="Range task. Complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Range task. Complete" />
   </component>
 </project>

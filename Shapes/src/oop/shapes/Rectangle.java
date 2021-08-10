@@ -1,21 +1,17 @@
 package oop.shapes;
 
-public class Square implements Shapes{
+public class Rectangle implements Shapes{
+    private double width;
     private double height;
 
-    public Square(){}
-
-    public Square(double value){
-        this.height = value;
-    }
-
-    public void setHeight(double value){
-        this.height = value;
+    public Rectangle(double width, double height){
+        this.width = width;
+        this.height = height;
     }
 
     @Override
     public double getWidth() {
-        return height;
+        return width;
     }
 
     @Override
@@ -25,11 +21,11 @@ public class Square implements Shapes{
 
     @Override
     public double getArea() {
-        return height*height;
+        return width*height;
     }
 
     @Override
     public double getPerimeter() {
-        return height*4;
+        return 2*(width+height);
     }
 }
