@@ -1,15 +1,12 @@
 package oop.shapes;
 
-public class Square implements Shapes{
+public class Square extends Shape{
     private double height;
 
-    public Square(){}
-
-    public Square(double value){
-        this.height = value;
+    public Square() {
     }
 
-    public void setHeight(double value){
+    public Square(double value) {
         this.height = value;
     }
 
@@ -25,11 +22,11 @@ public class Square implements Shapes{
 
     @Override
     public double getArea() {
-        return height*height;
+        return height * height;
     }
 
     @Override
     public double getPerimeter() {
-        return height*4;
+        return height * 4;
     }
 }

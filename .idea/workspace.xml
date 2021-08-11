@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Range task. Complete">
-      <change afterPath="$PROJECT_DIR$/Shapes/src/oop/shapes/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shapes/src/oop/shapes/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shapes/src/oop/shapes/Triangle.java" afterDir="false" />
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Shapes. Figure complete 80%">
+      <change afterPath="$PROJECT_DIR$/Shapes/src/oop/shapes/Shape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Range/src/oop/range/Range.java" beforeDir="false" afterPath="$PROJECT_DIR$/Range/src/oop/range/Range.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/oop/shapes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/oop/shapes/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/oop/shapes/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/oop/shapes/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/oop/shapes/Shapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/oop/shapes/Shapes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shapes/src/oop/shapes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/oop/shapes/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/oop/shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/oop/shapes/Triangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shapes/src/shapes/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/shapes/application/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +28,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1udmFK8OscU6JyHeRppAlH1i8u0" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -40,13 +51,26 @@
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.Main (2)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="range.application.Main" />
       <module name="Range" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="range.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="shapes.application.Main" />
+      <module name="Shapes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="shapes.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -69,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
@@ -118,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628594291204</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Shapes. Figure complete 80%">
+      <created>1628596643019</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1628596643019</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,6 +203,7 @@
     <MESSAGE value="Range task. Intersection complete" />
     <MESSAGE value="Range task. Merge complete" />
     <MESSAGE value="Range task. Complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Range task. Complete" />
+    <MESSAGE value="Shapes. Figure complete 80%" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shapes. Figure complete 80%" />
   </component>
 </project>
