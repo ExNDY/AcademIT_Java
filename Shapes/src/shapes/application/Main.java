@@ -1,10 +1,8 @@
 package shapes.application;
 
-import oop.shapes.*;
+import kcp.oop.shapes.*;
 
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -41,7 +39,7 @@ public class Main {
         ArrayList<Shape> figureList = getFiguresList();
 
         if (figureList.size() != 0){
-            
+
         }
     }
 

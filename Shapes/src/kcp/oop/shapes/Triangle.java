@@ -1,4 +1,4 @@
-package oop.shapes;
+package kcp.oop.shapes;
 
 public class Triangle extends Shape {
     private double x1;
