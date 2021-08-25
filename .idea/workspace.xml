@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Rework Range task">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Range/src/oop/range/Range.java" beforeDir="false" afterPath="$PROJECT_DIR$/Range/src/kcp/oop/range/Range.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Range/src/range/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Range/src/kcp/oop/application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/oop/shapes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kcp/oop/shapes/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/oop/shapes/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kcp/oop/shapes/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/oop/shapes/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kcp/oop/shapes/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/oop/shapes/Shapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kcp/oop/shapes/Shapes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/oop/shapes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kcp/oop/shapes/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/oop/shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kcp/oop/shapes/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/shapes/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/shapes/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Range/src/kcp/oop/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Range/src/kcp/oop/application/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628596643019</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Rework Range task">
+      <created>1629882098650</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1629882098650</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
