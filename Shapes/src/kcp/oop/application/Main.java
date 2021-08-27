@@ -1,8 +1,11 @@
-package shapes.application;
+package kcp.oop.application;
 
 import kcp.oop.shapes.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
@@ -68,6 +71,13 @@ public class Main {
     }
 
     private static Shape getMaxFigure(ArrayList<Shape> list){
+        Arrays.sort(list, new Comparator<Shape>() {
+            @Override
+            public int compare(Shape s1, Shape s2) {
+                if (s1.getArea())
+                return s1.getArea() > s2.getArea();
+            }
+        })
         //list.sort();
         return null;
     }

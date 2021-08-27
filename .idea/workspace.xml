@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Rework Range task">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Range/src/kcp/oop/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Range/src/kcp/oop/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/kcp/oop/shapes/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kcp/oop/shapes/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/shapes/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kcp/oop/application/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +44,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="kcp.oop" />
+      <recent name="shapes" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main (1)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -164,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629882098650</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Rework Range task">
+      <created>1629882655477</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1629882655477</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
