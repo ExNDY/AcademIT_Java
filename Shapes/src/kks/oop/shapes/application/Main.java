@@ -1,10 +1,9 @@
-package kcp.oop.application;
+package kks.oop.shapes.application;
 
-import kcp.oop.shapes.*;
+import kks.oop.shapes.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class Main {
@@ -47,7 +46,7 @@ public class Main {
     }
 
     private static ArrayList<Shape> getFiguresList(){
-        ArrayList<Shape> list = new ArrayList();
+        ArrayList<Shape> list = new ArrayList<>();
 
         Circle circle1 = new Circle(4);
         Rectangle rectangle1 = new Rectangle(6, 2);
@@ -71,13 +70,13 @@ public class Main {
     }
 
     private static Shape getMaxFigure(ArrayList<Shape> list){
-        Arrays.sort(list, new Comparator<Shape>() {
+        /*Arrays.sort(list, new Comparator<Shape>() {
             @Override
             public int compare(Shape s1, Shape s2) {
-                if (s1.getArea())
-                return s1.getArea() > s2.getArea();
+                //if (s1.getArea())
+                //return s1.getArea() > s2.getArea();
             }
-        })
+        })*/
         //list.sort();
         return null;
     }

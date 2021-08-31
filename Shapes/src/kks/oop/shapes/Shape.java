@@ -1,4 +1,4 @@
-package kcp.oop.shapes;
+package kks.oop.shapes;
 
 public class Shape implements Shapes{
     @Override

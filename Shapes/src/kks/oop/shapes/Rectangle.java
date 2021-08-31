@@ -1,4 +1,4 @@
-package kcp.oop.shapes;
+package kks.oop.shapes;
 
 public class Rectangle extends Shape{
     private double width;

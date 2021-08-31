@@ -1,4 +1,4 @@
-package kcp.oop.range;
+package kks.oop;
 
 public class Range {
     private double from;
@@ -38,34 +38,25 @@ public class Range {
         double intersectionTo = 0.0;
 
         if ((from <= range.from && range.from <= to) || (range.from <= from && from <= range.to)) {
-            intersectionFrom = Double.max(from, range.from);
+            intersectionFrom = Math.max(from, range.from);
 
-            intersectionTo = Double.min(to, range.to);
+            intersectionTo = Math.min(to, range.to);
         }
 
-        if (intersectionFrom == intersectionTo) {
-            return null;
-        } else {
+        if (intersectionFrom != intersectionTo) {
             return new Range(intersectionFrom, intersectionTo);
         }
+
+        return null;
     }
 
     public Range[] getUnion(Range range) {
         if ((from <= range.from && range.from <= to) || (range.from <= from && from <= range.to)) {
-            Range[] array = new Range[1];
-
-            array[0] = new Range(Double.min(from, range.from), Double.max(to, range.to));
-
-            return array;
+            return new Range[]{new Range(Math.min(from, range.from), Math.max(to, range.to))};
         }
 
         if (range.from < to || range.to < from) {
-            Range[] array = new Range[2];
-
-            array[0] = new Range(from, to);
-            array[1] = new Range(range.from, range.to);
-
-            return array;
+            return new Range[]{new Range(from, to), new Range(range.from, range.to)};
         }
 
         return null;
@@ -73,21 +64,20 @@ public class Range {
 
     public Range[] getDifference(Range range) {
         if (from <= range.from && range.to <= to) {
-            Range[] differenceRangesArray = new Range[2];
-
-            differenceRangesArray[0] = new Range(from, range.from);
-            differenceRangesArray[1] = new Range(range.to, to);
-
-            return differenceRangesArray;
+            return new Range[]{new Range(from, range.from), new Range(range.to, to)};
         }
 
         if (from <= range.from && range.from < to) {
-            Range[] differenceRangesArray = new Range[1];
-
-            differenceRangesArray[0] = new Range(from, range.from);
-            return differenceRangesArray;
+            return new Range[]{new Range(from, range.from)};
         }
 
         return new Range[0];
+    }
+
+    @Override
+    public String toString() {
+        return "Range {" + from +
+                "; " + to +
+                '}';
     }
 }

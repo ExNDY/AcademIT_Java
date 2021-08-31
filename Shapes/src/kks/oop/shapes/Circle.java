@@ -1,4 +1,4 @@
-package kcp.oop.shapes;
+package kks.oop.shapes;
 
 public class Circle extends Shape {
     private double radius;
