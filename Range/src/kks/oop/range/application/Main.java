@@ -1,4 +1,4 @@
-package kks.oop.range_application;
+package kks.oop.range.application;
 
 import kks.oop.Range;
 

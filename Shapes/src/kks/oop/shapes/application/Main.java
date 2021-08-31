@@ -1,4 +1,4 @@
-package kks.oop.shapes_application;
+package kks.oop.shapes.application;
 
 import kks.oop.shapes.*;
 
