@@ -1,4 +1,4 @@
-package kks.oop;
+package kks.oop.range;
 
 public class Range {
     private double from;
