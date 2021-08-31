@@ -55,19 +55,23 @@ public class Range {
             return new Range[]{new Range(Math.min(from, range.from), Math.max(to, range.to))};
         }
 
-        if (range.from < to || range.to < from) {
-            return new Range[]{new Range(from, to), new Range(range.from, range.to)};
-        }
-
-        return null;
+        return new Range[]{new Range(from, to), new Range(range.from, range.to)};
     }
 
     public Range[] getDifference(Range range) {
-        if (from <= range.from && range.to <= to) {
+        if (from >= range.to || to <= range.from) {
+            return new Range[]{new Range(from, to)};
+        }
+
+        if (from < range.from && range.to < to) {
             return new Range[]{new Range(from, range.from), new Range(range.to, to)};
         }
 
-        if (from <= range.from && range.from < to) {
+        if (from < range.to && range.to < to) {
+            return new Range[]{new Range(range.to, to)};
+        }
+
+        if (to > range.from && range.to >= to && from != range.from) {
             return new Range[]{new Range(from, range.from)};
         }
 
@@ -76,8 +80,8 @@ public class Range {
 
     @Override
     public String toString() {
-        return "Range {" + from +
+        return "(" + from +
                 "; " + to +
-                '}';
+                ')';
     }
 }

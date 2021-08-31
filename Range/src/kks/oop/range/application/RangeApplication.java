@@ -2,26 +2,44 @@ package kks.oop.range.application;
 
 import kks.oop.range.Range;
 
-public class Main {
+public class RangeApplication {
     public static void main(String[] args) {
         Range range = new Range(-4, 2);
 
-        System.out.println("Range created:");
-        System.out.println(range);
+        System.out.println("Range created: " + range);
         System.out.println("Range has size: " + range.getLength());
 
-        double insideNumber = -2;
+        int insideNumber = -2;
 
+        calculateIsInside(range, insideNumber);
+
+        printDivider();
+
+        calculateIntersection();
+
+        printDivider();
+
+        calculateUnion();
+
+        printDivider();
+
+        calculateDifference();
+
+        printDivider();
+    }
+
+    private static void calculateIsInside(Range range, int insideNumber) {
         System.out.println("Number " + insideNumber + " inside in range?");
 
         boolean isInside = range.isInside(insideNumber);
 
         System.out.println(insideNumber + " " + resultIsInsideToString(isInside));
+    }
 
-        System.out.println("-----Base task - complete-----");
+    private static void calculateIntersection() {
         System.out.println("Intersection:");
 
-        Range intersectionRange1 = new Range(-7.0, 15.0);
+        Range intersectionRange1 = new Range(-7.0, 19.0);
         Range intersectionRange2 = new Range(15.0, 35.0);
 
         System.out.println(intersectionRange1);
@@ -30,11 +48,13 @@ public class Main {
         Range intersectionRange = intersectionRange1.getIntersection(intersectionRange2);
 
         printResultIntersection(intersectionRange);
+    }
 
+    private static void calculateUnion() {
         System.out.println("Union:");
 
-        Range unionRange1 = new Range(2.0, 5.0);
-        Range unionRange2 = new Range(-6.0, 9.0);
+        Range unionRange1 = new Range(1.0, 3.0);
+        Range unionRange2 = new Range(5.0, 9.0);
 
         System.out.println(unionRange1);
         System.out.println(unionRange2);
@@ -42,24 +62,22 @@ public class Main {
         Range[] unionRanges = unionRange1.getUnion(unionRange2);
 
         printResultUnionRanges(unionRanges);
+    }
 
+    private static void calculateDifference() {
         System.out.println("Difference:");
 
-        Range differenceRange1 = new Range(1.0, 10.0);
-        Range differenceRange2 = new Range(5.0, 9.0);
+        Range differenceRange1 = new Range(5.0, 7.0);
+        Range differenceRange2 = new Range(1.0, 3.0);
 
         System.out.println(differenceRange1);
         System.out.println(differenceRange2);
 
         Range[] differenceRanges = differenceRange1.getDifference(differenceRange2);
 
-        printResultDifferenceRanges(differenceRanges);
-    }
+        System.out.println("Result:");
 
-    private static void printRanges(Range[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.println("Range " + (i + 1) + ": " + array[i]);
-        }
+        printRanges(differenceRanges);
     }
 
     private static String resultIsInsideToString(boolean isInside) {
@@ -68,6 +86,20 @@ public class Main {
         }
 
         return "exclude from range";
+    }
+
+    private static void printRanges(Range[] array) {
+        System.out.print("Ranges [");
+
+        for (int i = 0; i < array.length; i++) {
+            if (i == array.length - 1) {
+                System.out.print(array[i]);
+            } else {
+                System.out.print(array[i] + ",");
+            }
+        }
+
+        System.out.println("].");
     }
 
     private static void printResultIntersection(Range range) {
@@ -83,17 +115,12 @@ public class Main {
             System.out.println("Union: " + array[0]);
         } else {
             System.out.println("Union not exist. Result:");
-            System.out.println(array[0] + ", " + array[1]);
+
+            printRanges(array);
         }
     }
 
-    private static void printResultDifferenceRanges(Range[] array) {
-        switch (array.length) {
-            case 0 -> System.out.println("Interval don't overlap. Difference not exist");
-            case 1 -> System.out.println("Result: " + array[0]);
-            case 2 -> System.out.println("Result:" + array[0]
-                    + ", " + array[1]);
-            default -> System.out.println("Error.");
-        }
+    private static void printDivider() {
+        System.out.println("###################");
     }
 }
