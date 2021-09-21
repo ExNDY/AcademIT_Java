@@ -35,11 +35,11 @@ public class RangeApplication {
         calculateDifference(differenceRange1, differenceRange2);
 
         printDivider();
-/*
+
         Range urange1 = new Range(1.0, 3.0);
         Range urange2 = new Range(5.0, 9.0);
 
-        test(urange1, urange2);*/
+        test(urange1, urange2);
     }
 
     private static void calculateIsInside(Range range, int insideNumber) {
@@ -118,4 +118,19 @@ public class RangeApplication {
         System.out.println("###################");
     }
 
+    private static void test(Range range1, Range range2){
+        System.out.println("TEST");
+        System.out.println(range1);
+        System.out.println(range2);
+
+
+        double x = Math.min(range1.getFrom(), range2.getFrom());
+        double y = Math.max(range1.getTo(), range2.getTo());
+
+        if (x > y){
+            System.out.println("WOW");
+        } else {
+            System.out.println("MEW");
+        }
+    }
 }

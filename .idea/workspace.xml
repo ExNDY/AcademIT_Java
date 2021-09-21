@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Rework Range task. Change getDifferencem getUnion, getIntersection. Rewrite RangeApplication.java">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Range/src/kks/oop/range/Range.java" beforeDir="false" afterPath="$PROJECT_DIR$/Range/src/kks/oop/range/Range.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Range/src/kks/oop/range/application/RangeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Range/src/kks/oop/range/application/RangeApplication.java" afterDir="false" />
-    </list>
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Rework RangeApplication.java" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +16,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -235,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630428194374</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Rework RangeApplication.java">
+      <created>1632242342713</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1632242342714</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -291,6 +300,7 @@
     <MESSAGE value="Shapes. Figure complete 80%" />
     <MESSAGE value="Rework Range task" />
     <MESSAGE value="Rework Range task. Change getDifferencem getUnion, getIntersection. Rewrite RangeApplication.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rework Range task. Change getDifferencem getUnion, getIntersection. Rewrite RangeApplication.java" />
+    <MESSAGE value="Rework RangeApplication.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rework RangeApplication.java" />
   </component>
 </project>
