@@ -3,8 +3,6 @@ package kks.oop.shapes.application;
 import kks.oop.shapes.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,34 +13,35 @@ public class Main {
         Square square = new Square(4);
         Triangle triangle = new Triangle(-2, -3, 0, 5, 6, 1);
 
-        System.out.println("Circle"
-                + " width: " + circle.getWidth()
-                + " height: " + circle.getHeight()
-                + " area: " + Math.round(circle.getArea())
-                + " perimeter: " + Math.round(circle.getPerimeter()));
-        System.out.println("Rectangle"
-                + " width: " + rectangle.getWidth()
-                + " height: " + rectangle.getHeight()
-                + " area: " + Math.round(rectangle.getArea())
-                + " perimeter: " + Math.round(rectangle.getPerimeter()));
-        System.out.println("Square"
-                + " width: " + square.getWidth()
-                + " height: " + square.getHeight()
-                + " area: " + Math.round(square.getArea())
-                + " perimeter: " + Math.round(square.getPerimeter()));
-        System.out.println("Triangle"
-                + " width: " + triangle.getWidth()
-                + " height: " + triangle.getHeight()
-                + " area: " + Math.round(triangle.getArea())
-                + " perimeter: " + Math.round(triangle.getPerimeter()));
+        System.out.println("Circle");
+        printShapeInfo(circle);
+
+        System.out.println("Rectangle");
+        printShapeInfo(rectangle);
+
+        System.out.println("Square");
+        printShapeInfo(square);
+
+        System.out.println("Triangle");
+        printShapeInfo(triangle);
 
         System.out.println("Part 2");
 
         ArrayList<Shape> figureList = getFiguresList();
 
+        System.out.println("Shape list created.");
+
         if (figureList.size() != 0){
 
         }
+    }
+
+    private static void printShapeInfo(Shape shape) {
+        System.out.println("Shape info: "
+                + " width: " + shape.getWidth()
+                + " height: " + shape.getHeight()
+                + " area: " + Math.round(shape.getArea())
+                + " perimeter: " + Math.round(shape.getPerimeter()));
     }
 
     private static ArrayList<Shape> getFiguresList(){

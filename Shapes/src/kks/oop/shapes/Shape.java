@@ -1,6 +1,6 @@
 package kks.oop.shapes;
 
-public class Shape implements Shapes{
+public class Shape implements Shapes {
     @Override
     public double getWidth() {
         return 0;

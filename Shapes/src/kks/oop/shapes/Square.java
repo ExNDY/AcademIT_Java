@@ -1,10 +1,7 @@
 package kks.oop.shapes;
 
-public class Square extends Shape{
-    private double height;
-
-    public Square() {
-    }
+public class Square extends Shape {
+    private final double height;
 
     public Square(double value) {
         this.height = value;

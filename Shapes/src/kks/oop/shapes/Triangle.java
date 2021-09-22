@@ -1,12 +1,12 @@
 package kks.oop.shapes;
 
 public class Triangle extends Shape {
-    private double x1;
-    private double y1;
-    private double x2;
-    private double y2;
-    private double x3;
-    private double y3;
+    private final double x1;
+    private final double y1;
+    private final double x2;
+    private final double y2;
+    private final double x3;
+    private final double y3;
 
     /***
      * Constructor with coordinate three point on XY axis

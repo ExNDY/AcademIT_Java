@@ -1,7 +1,7 @@
 package kks.oop.shapes;
 
 public class Circle extends Shape {
-    private double radius;
+    private final double radius;
 
     public Circle(double value) {
         this.radius = value;

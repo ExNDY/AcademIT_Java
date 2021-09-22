@@ -34,24 +34,15 @@ public class Range {
     }
 
     public Range getIntersection(Range range) {
-        double intersectionFrom = 0.0;
-        double intersectionTo = 0.0;
-
-        if ((from <= range.from && range.from <= to) || (range.from <= from && from <= range.to)) {
-            intersectionFrom = Math.max(from, range.from);
-
-            intersectionTo = Math.min(to, range.to);
-        }
-
-        if (intersectionFrom != intersectionTo) {
-            return new Range(intersectionFrom, intersectionTo);
+        if (from < range.to && range.from < to) {
+            return new Range(Math.max(from, range.from), Math.min(to, range.to));
         }
 
         return null;
     }
 
     public Range[] getUnion(Range range) {
-        if ((from <= range.from && range.from <= to) || (range.from <= from && from <= range.to)) {
+        if (from <= range.to && range.from <= to) {
             return new Range[]{new Range(Math.min(from, range.from), Math.max(to, range.to))};
         }
 
@@ -59,27 +50,32 @@ public class Range {
     }
 
     public Range[] getDifference(Range range) {
+        //without overlap
         if (from >= range.to || to <= range.from) {
             return new Range[]{new Range(from, to)};
         }
 
+        //inside overlap
         if (from < range.from && range.to < to) {
             return new Range[]{new Range(from, range.from), new Range(range.to, to)};
         }
 
-        if (from < range.to && range.to < to) {
+        //left overlap
+        if (range.to < to) {
             return new Range[]{new Range(range.to, to)};
         }
 
-        if (to > range.from && range.to >= to && from != range.from) {
+        //right overlap
+        if (range.from > from) {
             return new Range[]{new Range(from, range.from)};
         }
 
+        //full overlap
         return new Range[0];
     }
 
     @Override
     public String toString() {
-        return "(" + from + "; " + to +')';
+        return "(" + from + "; " + to + ')';
     }
 }
