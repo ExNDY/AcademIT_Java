@@ -28,4 +28,31 @@ public class Rectangle extends Shape {
     public double getPerimeter() {
         return 2 * (width + height);
     }
+
+    @Override
+    public String toString() {
+        return "Rectangle: width = " + width + ", height = " + height + ", area: " + Math.round(getArea()) + ", perimeter: " + Math.round(getPerimeter()) + ".";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) return true;
+
+        if (o == null || o.getClass() != this.getClass()) return false;
+
+        Rectangle r = (Rectangle) o;
+
+        return width == r.width && height == r.height;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 39;
+        int hashValue = 1;
+
+        hashValue = prime * hashValue + Double.hashCode(width);
+        hashValue = prime * hashValue + Double.hashCode(height);
+
+        return hashValue;
+    }
 }
