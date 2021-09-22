@@ -24,7 +24,7 @@ public class ShapeApplication {
 
         System.out.println("Part 2");
 
-        Shape[] shapes = getShapeList();
+        Shape[] shapes = getShapesArray();
 
         System.out.println("Shapes array created.");
 
@@ -59,7 +59,7 @@ public class ShapeApplication {
         return "Shape not identify";
     }
 
-    private static Shape[] getShapeList() {
+    private static Shape[] getShapesArray() {
         Shape[] shapes = new Shape[8];
 
         shapes[0] = new Circle(4);
