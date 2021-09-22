@@ -34,6 +34,7 @@ public class ShapeApplication {
         printShapeInfo(maxAreaShape);
 
         Shape secondByPerimeterShape = getShapeSecondLargestOfPerimeter(shapes);
+
         System.out.println("The second value by Perimeter is a " + defineShape(secondByPerimeterShape));
         printShapeInfo(secondByPerimeterShape);
     }
