@@ -109,7 +109,7 @@ public class ArrayList<T> implements List<T> {
 
     @Override
     public boolean remove(Object o) {
-        if (indexOf(0) != -1) {
+        if (indexOf(o) != -1) {
             remove(indexOf(o));
 
             return true;
@@ -154,8 +154,6 @@ public class ArrayList<T> implements List<T> {
 
         System.arraycopy(items, index, items, index + c.size(), size - index);
 
-        int oldSize = size;
-
         int i = index;
 
         for (T t : c) {
@@ -163,11 +161,8 @@ public class ArrayList<T> implements List<T> {
             i++;
         }
 
-        if (oldSize != items.length) {
-            this.modCount++;
-
-            this.size = items.length;
-        }
+        modCount++;
+        size = items.length;
 
         return true;
     }
@@ -289,6 +284,27 @@ public class ArrayList<T> implements List<T> {
         return -1;
     }
 
+    @Override
+    public String toString(){
+        if (size == 0){
+            return "[]";
+        }
+
+        StringBuilder str = new StringBuilder("[");
+
+        for (int i = 0; i < size; i++){
+            if (i>0){
+                str.append(", ");
+            }
+
+            str.append(items[i]);
+        }
+
+        str.append("]");
+
+        return str.toString();
+    }
+
     /***
      * Check out-of-bounds index
      * @param index value
@@ -303,7 +319,7 @@ public class ArrayList<T> implements List<T> {
         }
     }
 
-    public void ensureCapacity(int minCapacity) {
+    private void ensureCapacity(int minCapacity) {
         if (minCapacity < 0) {
             throw new IllegalArgumentException("Capacity = " + minCapacity + " must be >=0");
         }
