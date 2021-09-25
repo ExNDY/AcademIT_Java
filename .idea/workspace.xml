@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Rewrite Range: getDifference, getUnion, getIntersection&#10;Rewrite ShapeApplication">
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Rewrite ShapeApplication, override hashcode,toString, equals for shapes">
+      <change afterPath="$PROJECT_DIR$/ArrayList/ArrayList.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArrayList/src/kks/oop/arraylist/ArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/application/ShapeApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +277,28 @@
       <option name="project" value="LOCAL" />
       <updated>1632300612314</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Rewrite ShapeApplication, override hashcode,toString, equals for shapes">
+      <created>1632306204564</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1632306204564</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Rewrite ShapeApplication, override hashcode,toString, equals for shapes">
+      <created>1632306335744</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1632306335744</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Rewrite ShapeApplication, override hashcode,toString, equals for shapes">
+      <created>1632306383008</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1632306383008</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,6 +356,7 @@
     <MESSAGE value="Rework Range task. Change getDifferencem getUnion, getIntersection. Rewrite RangeApplication.java" />
     <MESSAGE value="Rework RangeApplication.java" />
     <MESSAGE value="Rewrite Range: getDifference, getUnion, getIntersection&#10;Rewrite ShapeApplication" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rewrite Range: getDifference, getUnion, getIntersection&#10;Rewrite ShapeApplication" />
+    <MESSAGE value="Rewrite ShapeApplication, override hashcode,toString, equals for shapes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rewrite ShapeApplication, override hashcode,toString, equals for shapes" />
   </component>
 </project>
