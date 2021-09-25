@@ -35,6 +35,7 @@ public class VectorApp {
 
         System.out.println("Test for getAll command. Result Array: " + Arrays.toString(array));
         System.out.println("Create Vector v2:");
+
         Vector v2 = new Vector(new double[]{5.0, 71.0, 81.0});
 
         System.out.println(v2);
