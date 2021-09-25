@@ -15,24 +15,18 @@ public class RangeApplication {
 
         printDivider();
 
-        Range intersectionRange1 = new Range(15.0, 32.0);
-        Range intersectionRange2 = new Range(7.0, 15.0);
+        Range range1 = new Range(15.0, 32.0);
+        Range range2 = new Range(7.0, 15.0);
 
-        calculateIntersection(intersectionRange1, intersectionRange2);
-
-        printDivider();
-
-        Range unionRange1 = new Range(8.0, 14.0);
-        Range unionRange2 = new Range(5.0, 9.0);
-
-        calculateUnion(unionRange1, unionRange2);
+        calculateIntersection(range1, range2);
 
         printDivider();
 
-        Range differenceRange1 = new Range(5.0, 7.0);
-        Range differenceRange2 = new Range(3.0, 7.0);
+        calculateUnion(range1, range2);
 
-        calculateDifference(differenceRange1, differenceRange2);
+        printDivider();
+
+        calculateDifference(range1, range2);
 
         printDivider();
     }
@@ -66,13 +60,7 @@ public class RangeApplication {
 
         Range[] unionRanges = range1.getUnion(range2);
 
-        if (unionRanges.length == 1) {
-            System.out.println("Result: " + unionRanges[0]);
-        } else {
-            System.out.println("Result: ");
-
-            printRanges(unionRanges);
-        }
+        printRanges(unionRanges);
     }
 
     private static void calculateDifference(Range range1, Range range2) {

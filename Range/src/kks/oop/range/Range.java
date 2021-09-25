@@ -50,27 +50,27 @@ public class Range {
     }
 
     public Range[] getDifference(Range range) {
-        //without overlap
+        // without overlap
         if (from >= range.to || to <= range.from) {
             return new Range[]{new Range(from, to)};
         }
 
-        //inside overlap
+        // inside overlap
         if (from < range.from && range.to < to) {
             return new Range[]{new Range(from, range.from), new Range(range.to, to)};
         }
 
-        //left overlap
+        // eft overlap
         if (range.to < to) {
             return new Range[]{new Range(range.to, to)};
         }
 
-        //right overlap
+        // right overlap
         if (range.from > from) {
             return new Range[]{new Range(from, range.from)};
         }
 
-        //full overlap
+        // full overlap
         return new Range[0];
     }
 

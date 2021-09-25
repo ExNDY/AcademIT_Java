@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Added ArrayListApp.java">
-      <change afterPath="$PROJECT_DIR$/Vector/Vector.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vector/src/kks/oop/vector/Vector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vector/src/kks/oop/vector/application/VectorApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Added module Vector" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +62,7 @@
       <recent name="shapes" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.VectorApp">
+  <component name="RunManager" selected="Application.RangeApplication">
     <configuration name="ArrayListApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kks.oop.arraylist.application.ArrayListApp" />
       <module name="ArrayList" />
@@ -149,10 +143,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RangeApplication" />
         <item itemvalue="Application.VectorApp" />
         <item itemvalue="Application.ArrayListApp" />
         <item itemvalue="Application.ShapeApplication" />
-        <item itemvalue="Application.RangeApplication" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -313,7 +307,21 @@
       <option name="project" value="LOCAL" />
       <updated>1632573152242</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added module Vector">
+      <created>1632594270409</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1632594270409</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Added module Vector">
+      <created>1632594326336</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1632594326336</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -374,7 +382,8 @@
     <MESSAGE value="Rewrite ShapeApplication, override hashcode,toString, equals for shapes" />
     <MESSAGE value="Add module ArrayList with ArrayList.java (Custom realisation of ArrayList)" />
     <MESSAGE value="Added ArrayListApp.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ArrayListApp.java" />
+    <MESSAGE value="Added module Vector" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added module Vector" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
