@@ -24,6 +24,10 @@ public class LambdaModuleApp {
     public static void main(String[] args) {
         List<Person> personsList = getPersonsList();
 
+        System.out.println("Persons list: ");
+
+        printList(personsList);
+
         List<String> uniqueNamesList = personsList.stream()
                 .map(Person::getName).distinct()
                 .collect(Collectors.toList());
@@ -71,5 +75,11 @@ public class LambdaModuleApp {
                 new Person("Екатерина", 5),
                 new Person("Никифор", 76)
         );
+    }
+
+    private static void printList(List<Person> list){
+        for (Person p: list){
+            System.out.println(p);
+        }
     }
 }
