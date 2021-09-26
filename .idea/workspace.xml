@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Added module Vector" />
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Small fix for Range module">
+      <change afterPath="$PROJECT_DIR$/ArrayListHome/ArrayListHome.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArrayListHome/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArrayListHome/src/kks/oop/arraylisthome/TaskUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArrayListHome/src/kks/oop/arraylisthome/application/ArraylistHomeApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +62,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Endy\IdeaProjects\AcademIT_Java_latest\ArrayListHome" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="kks.oop.range" />
       <recent name="kks.oop" />
@@ -62,7 +72,7 @@
       <recent name="shapes" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RangeApplication">
+  <component name="RunManager" selected="Application.ArraylistHomeApp">
     <configuration name="ArrayListApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kks.oop.arraylist.application.ArrayListApp" />
       <module name="ArrayList" />
@@ -76,12 +86,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="oop.application.Main" />
-      <module name="Range" />
+    <configuration name="ArraylistHomeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kks.oop.arraylisthome.application.ArraylistHomeApp" />
+      <module name="ArrayListHome" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="oop.application.*" />
+          <option name="PATTERN" value="kks.oop.arraylisthome.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -143,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArraylistHomeApp" />
         <item itemvalue="Application.RangeApplication" />
         <item itemvalue="Application.VectorApp" />
         <item itemvalue="Application.ArrayListApp" />
         <item itemvalue="Application.ShapeApplication" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -321,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632594326336</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Small fix for Range module">
+      <created>1632594633429</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1632594633429</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -383,7 +400,8 @@
     <MESSAGE value="Add module ArrayList with ArrayList.java (Custom realisation of ArrayList)" />
     <MESSAGE value="Added ArrayListApp.java" />
     <MESSAGE value="Added module Vector" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added module Vector" />
+    <MESSAGE value="Small fix for Range module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small fix for Range module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
