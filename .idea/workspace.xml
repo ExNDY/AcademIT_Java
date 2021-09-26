@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Small fix for Range module">
-      <change afterPath="$PROJECT_DIR$/ArrayListHome/ArrayListHome.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArrayListHome/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArrayListHome/src/kks/oop/arraylisthome/TaskUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArrayListHome/src/kks/oop/arraylisthome/application/ArraylistHomeApp.java" afterDir="false" />
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="ArrayListHome module">
+      <change afterPath="$PROJECT_DIR$/LambdaModule/LambdaModule.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LambdaModule/src/kks/oop/lambdamodule/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LambdaModule/src/kks/oop/lambdamodule/application/LambdaModuleApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -72,7 +71,7 @@
       <recent name="shapes" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ArraylistHomeApp">
+  <component name="RunManager" selected="Application.LambdaModuleApp">
     <configuration name="ArrayListApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kks.oop.arraylist.application.ArrayListApp" />
       <module name="ArrayList" />
@@ -92,6 +91,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="kks.oop.arraylisthome.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LambdaModuleApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kks.oop.lambdamodule.application.LambdaModuleApp" />
+      <module name="LambdaModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kks.oop.lambdamodule.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,19 +137,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShapeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kks.oop.shapes.application.ShapeApplication" />
-      <module name="Shapes" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="kks.oop.shapes.application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="VectorApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kks.oop.vector.application.VectorApp" />
       <module name="Vector" />
@@ -153,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LambdaModuleApp" />
         <item itemvalue="Application.ArraylistHomeApp" />
         <item itemvalue="Application.RangeApplication" />
         <item itemvalue="Application.VectorApp" />
         <item itemvalue="Application.ArrayListApp" />
-        <item itemvalue="Application.ShapeApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -338,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632594633429</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="ArrayListHome module">
+      <created>1632664610706</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1632664610706</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -401,7 +407,8 @@
     <MESSAGE value="Added ArrayListApp.java" />
     <MESSAGE value="Added module Vector" />
     <MESSAGE value="Small fix for Range module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small fix for Range module" />
+    <MESSAGE value="ArrayListHome module" />
+    <option name="LAST_COMMIT_MESSAGE" value="ArrayListHome module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
