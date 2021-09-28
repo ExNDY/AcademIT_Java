@@ -5,15 +5,15 @@ public class Node<T> {
     private Node<T> leftChild;
     private Node<T> rightChild;
 
-    public Node(T value){
+    public Node(T value) {
         this.value = value;
     }
 
-    public T getValue(){
+    public T getValue() {
         return value;
     }
 
-    public void setValue(T value){
+    public void setValue(T value) {
         this.value = value;
     }
 

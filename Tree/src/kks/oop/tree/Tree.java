@@ -18,7 +18,7 @@ public class Tree<T> {
     }
 
     public Tree(Comparator<? super T> comparator) {
-        if (comparator == null){
+        if (comparator == null) {
             throw new NullPointerException("Comparator shouldn't be NULL");
         }
 
@@ -26,11 +26,11 @@ public class Tree<T> {
     }
 
     public Tree(Comparator<? super T> comparator, T rootValue) {
-        if (comparator == null){
+        if (comparator == null) {
             throw new NullPointerException("Comparator shouldn't be NULL");
         }
 
-        if (rootValue == null){
+        if (rootValue == null) {
             throw new NullPointerException("Root value shouldn't be NULL");
         }
 
@@ -173,7 +173,7 @@ public class Tree<T> {
 
         // Remove leaf node (Node without children)
         if (removedNode.getLeftChild() == null && removedNode.getRightChild() == null) {
-            if (removedNodeParent == null){
+            if (removedNodeParent == null) {
                 root = null;
             } else {
                 if (removedNodeParent.getLeftChild() == removedNode) {
@@ -241,7 +241,7 @@ public class Tree<T> {
         return true;
     }
 
-    public void breadthFirstSearch(Consumer<T> consumer){
+    public void breadthFirstSearch(Consumer<T> consumer) {
         if (consumer == null) {
             throw new NullPointerException("Consumer shouldn't be NULL");
         }
@@ -250,7 +250,7 @@ public class Tree<T> {
 
         queue.add(this.root);
 
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             Node<T> node = queue.poll();
 
             consumer.accept(node.getValue());
@@ -289,11 +289,11 @@ public class Tree<T> {
         }
     }
 
-    public void depthFirstSearchRecursive(Consumer<T> consumer){
+    public void depthFirstSearchRecursive(Consumer<T> consumer) {
         depthFirstSearchRecursive(root, consumer);
     }
 
-    private void depthFirstSearchRecursive(Node<T> node, Consumer<T> consumer){
+    private void depthFirstSearchRecursive(Node<T> node, Consumer<T> consumer) {
         if (node == null) return;
 
         consumer.accept(node.getValue());
@@ -314,7 +314,7 @@ public class Tree<T> {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         if (root == null) return "Tree is empty";
 
         Deque<Node<T>> deque = new LinkedList<>();
