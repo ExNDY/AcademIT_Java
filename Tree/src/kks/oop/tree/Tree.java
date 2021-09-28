@@ -252,6 +252,7 @@ public class Tree<T> {
 
         while (!queue.isEmpty()){
             Node<T> node = queue.poll();
+
             consumer.accept(node.getValue());
 
             if (node.getLeftChild() != null) {
