@@ -1,23 +1,11 @@
 package kks.oop.shapes;
 
-public class Shape implements Shapes {
-    @Override
-    public double getWidth() {
-        return 0;
-    }
+public interface Shape {
+    double getWidth();
 
-    @Override
-    public double getHeight() {
-        return 0;
-    }
+    double getHeight();
 
-    @Override
-    public double getArea() {
-        return 0;
-    }
+    double getArea();
 
-    @Override
-    public double getPerimeter() {
-        return 0;
-    }
+    double getPerimeter();
 }

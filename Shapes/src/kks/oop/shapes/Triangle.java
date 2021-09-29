@@ -1,12 +1,36 @@
 package kks.oop.shapes;
 
-public class Triangle extends Shape {
+public class Triangle implements Shape {
     private final double x1;
     private final double y1;
     private final double x2;
     private final double y2;
     private final double x3;
     private final double y3;
+
+    public double getX1() {
+        return x1;
+    }
+
+    public double getY1() {
+        return y1;
+    }
+
+    public double getX2() {
+        return x2;
+    }
+
+    public double getY2() {
+        return y2;
+    }
+
+    public double getX3() {
+        return x3;
+    }
+
+    public double getY3() {
+        return y3;
+    }
 
     /***
      * Constructor with coordinate three point on XY axis
@@ -26,6 +50,18 @@ public class Triangle extends Shape {
         this.y3 = y3;
     }
 
+    public double getSideABLength(){
+        return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
+    }
+
+    public double getSideBCLength(){
+        return Math.sqrt(Math.pow((x3 - x2), 2) + Math.pow((y3 - y2), 2));
+    }
+
+    public double getSideCALength(){
+        return Math.sqrt(Math.pow((x1 - x3), 2) + Math.pow((y1 - y3), 2));
+    }
+
     @Override
     public double getWidth() {
         return Math.max(Math.max(x1, x2), x3) - Math.min(Math.min(x1, x2), x3);
@@ -38,44 +74,41 @@ public class Triangle extends Shape {
 
     @Override
     public double getArea() {
-        double a = Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
-        double b = Math.sqrt(Math.pow((x3 - x2), 2) + Math.pow((y3 - y2), 2));
-        double c = Math.sqrt(Math.pow((x1 - x3), 2) + Math.pow((y1 - y3), 2));
-        double p = (a + b + c) / 2;
+        double semiPerimeter = (getSideABLength() + getSideBCLength() + getSideCALength()) / 2;
 
-        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        return Math.sqrt(semiPerimeter * (semiPerimeter - getSideABLength()) * (semiPerimeter - getSideBCLength()) * (semiPerimeter - getSideCALength()));
     }
 
     @Override
     public double getPerimeter() {
-        double a = Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
-        double b = Math.sqrt(Math.pow((x3 - x2), 2) + Math.pow((y3 - y2), 2));
-        double c = Math.sqrt(Math.pow((x1 - x3), 2) + Math.pow((y1 - y3), 2));
-
-        return a + b + c;
+        return getSideABLength() + getSideBCLength() + getSideCALength();
     }
 
     @Override
     public String toString() {
-        return "Triangle: width = " + getWidth() + ", height = " + getHeight() + ", area: " + Math.round(getArea()) + ", perimeter: " + Math.round(getPerimeter()) + ".";
+        return "Triangle: A(" + x1 + ";" + y1 +"), B(" + x2 + ";" + y2 + "), C(" + x3 + ";" + y3 + "). Area = " + getArea() + ", perimeter = " + getPerimeter() + ".";
     }
 
     @Override
     public boolean equals(Object o) {
-        if (o == this) return true;
+        if (o == this) {
+            return true;
+        }
 
-        if (o == null || o.getClass() != this.getClass()) return false;
+        if (o == null || o.getClass() != this.getClass()) {
+            return false;
+        }
 
         Triangle t = (Triangle) o;
 
-        return x1 == t.x1 && y1 == t.y1
-                && x2 == t.x2 && y2 == t.y2
-                && x3 == t.x3 && y3 == t.y3;
+        return this.x1 == t.x1 && this.y1 == t.y1
+                && this.x2 == t.x2 && this.y2 == t.y2
+                && this.x3 == t.x3 && this.y3 == t.y3;
     }
 
     @Override
     public int hashCode() {
-        final int prime = 39;
+        final int prime = 13;
         int hashValue = 1;
 
         hashValue = prime * hashValue + Double.hashCode(x1);

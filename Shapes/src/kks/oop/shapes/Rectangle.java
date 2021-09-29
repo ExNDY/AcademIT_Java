@@ -1,6 +1,6 @@
 package kks.oop.shapes;
 
-public class Rectangle extends Shape {
+public class Rectangle implements Shape {
     private final double width;
     private final double height;
 
@@ -31,23 +31,27 @@ public class Rectangle extends Shape {
 
     @Override
     public String toString() {
-        return "Rectangle: width = " + width + ", height = " + height + ", area: " + Math.round(getArea()) + ", perimeter: " + Math.round(getPerimeter()) + ".";
+        return "Rectangle: width = " + width + ", height = " + height + ", area: " + getArea() + ", perimeter: " + getPerimeter() + ".";
     }
 
     @Override
     public boolean equals(Object o) {
-        if (o == this) return true;
+        if (o == this) {
+            return true;
+        }
 
-        if (o == null || o.getClass() != this.getClass()) return false;
+        if (o == null || o.getClass() != this.getClass()) {
+            return false;
+        }
 
         Rectangle r = (Rectangle) o;
 
-        return width == r.width && height == r.height;
+        return this.width == r.width && this.height == r.height;
     }
 
     @Override
     public int hashCode() {
-        final int prime = 39;
+        final int prime = 13;
         int hashValue = 1;
 
         hashValue = prime * hashValue + Double.hashCode(width);

@@ -1,54 +1,62 @@
 package kks.oop.shapes;
 
-public class Square extends Shape {
-    private final double side;
+public class Square implements Shape {
+    private final double sideLength;
 
-    public Square(double value) {
-        this.side = value;
+    public Square(double sideLength) {
+        this.sideLength = sideLength;
+    }
+
+    public double getSideLength() {
+        return sideLength;
     }
 
     @Override
     public double getWidth() {
-        return side;
+        return sideLength;
     }
 
     @Override
     public double getHeight() {
-        return side;
+        return sideLength;
     }
 
     @Override
     public double getArea() {
-        return side * side;
+        return sideLength * sideLength;
     }
 
     @Override
     public double getPerimeter() {
-        return side * 4;
+        return sideLength * 4;
     }
 
     @Override
     public String toString() {
-        return "Square: width = " + getWidth() + ", height = " + getHeight() + ", area: " + Math.round(getArea()) + ", perimeter: " + Math.round(getPerimeter()) + ".";
+        return "Square: Side length = " + sideLength + ", area: " + getArea() + ", perimeter: " + getPerimeter() + ".";
     }
 
     @Override
     public boolean equals(Object o) {
-        if (o == this) return true;
+        if (o == this) {
+            return true;
+        }
 
-        if (o == null || o.getClass() != this.getClass()) return false;
+        if (o == null || o.getClass() != this.getClass()) {
+            return false;
+        }
 
         Square s = (Square) o;
 
-        return side == s.side;
+        return this.sideLength == s.sideLength;
     }
 
     @Override
     public int hashCode() {
-        final int prime = 39;
+        final int prime = 13;
         int hashValue = 1;
 
-        hashValue = prime * hashValue + Double.hashCode(side);
+        hashValue = prime * hashValue + Double.hashCode(sideLength);
 
         return hashValue;
     }

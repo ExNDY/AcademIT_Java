@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Added tree module, add sample application( BinaryTreeApp.java ) with test of result.">
-      <change beforePath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyLinkedList/MyLinkedList.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyLinkedList/src/kks/oop/list/ListItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyLinkedList/src/kks/oop/list/MyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/comparators/AreaComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/comparators/PerimeterComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Shapes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/application/ShapeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/application/ShapeApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +80,7 @@
       <recent name="shapes" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BinaryTreeApp">
+  <component name="RunManager" selected="Application.ShapeApplication">
     <configuration name="ArraylistHomeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kks.oop.arraylisthome.application.ArraylistHomeApp" />
       <module name="ArrayListHome" />
@@ -120,12 +133,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VectorApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kks.oop.vector.application.VectorApp" />
-      <module name="Vector" />
+    <configuration name="ShapeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kks.oop.shapes.application.ShapeApplication" />
+      <module name="Shapes" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="kks.oop.vector.application.*" />
+          <option name="PATTERN" value="kks.oop.shapes.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ShapeApplication" />
         <item itemvalue="Application.BinaryTreeApp" />
         <item itemvalue="Application.LambdaModuleApp" />
         <item itemvalue="Application.ArraylistHomeApp" />
         <item itemvalue="Application.RangeApplication" />
-        <item itemvalue="Application.VectorApp" />
       </list>
     </recent_temporary>
   </component>
@@ -348,7 +361,21 @@
       <option name="project" value="LOCAL" />
       <updated>1632832502458</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added tree module, add sample application( BinaryTreeApp.java ) with test of result.">
+      <created>1632832907721</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1632832907721</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Added tree module, add sample application( BinaryTreeApp.java ) with test of result.">
+      <created>1632832944434</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1632832944434</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

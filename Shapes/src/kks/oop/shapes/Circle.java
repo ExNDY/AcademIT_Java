@@ -1,10 +1,14 @@
 package kks.oop.shapes;
 
-public class Circle extends Shape {
+public class Circle implements Shape {
     private final double radius;
 
-    public Circle(double value) {
-        this.radius = value;
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
     }
 
     @Override
@@ -29,22 +33,27 @@ public class Circle extends Shape {
 
     @Override
     public String toString() {
-        return "Circle: radius = " + radius + ", diameter = " + radius * 2 + ", area: " + Math.round(getArea()) + ", perimeter: " + Math.round(getPerimeter()) + ".";
+        return "Circle: radius = " + radius + ", area: " + getArea() + ", perimeter: " + getPerimeter() + ".";
     }
 
     @Override
     public boolean equals(Object o) {
-        if (o == this) return true;
+        if (o == this) {
+            return true;
+        }
 
-        if (o == null || o.getClass() != this.getClass()) return false;
+        if (o == null || o.getClass() != this.getClass()) {
+            return false;
+        }
 
-        return radius == ((Circle) o).radius;
+        return this.radius == ((Circle) o).radius;
     }
 
     @Override
     public int hashCode() {
-        final int prime = 39;
+        final int prime = 13;
         int hashValue = 1;
+
         return prime * hashValue + Double.hashCode(radius);
     }
 }
