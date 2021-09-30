@@ -1,7 +1,5 @@
 package kks.oop.list;
 
-import java.util.LinkedList;
-
 public class MyLinkedList<T> {
     private ListItem<T> head;
     private int size = 0;
