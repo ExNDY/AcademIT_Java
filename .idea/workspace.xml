@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Added tree module, add sample application( BinaryTreeApp.java ) with test of result.">
-      <change afterPath="$PROJECT_DIR$/MyLinkedList/MyLinkedList.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyLinkedList/src/kks/oop/list/ListItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyLinkedList/src/kks/oop/list/MyLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/comparators/AreaComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/comparators/PerimeterComparator.java" afterDir="false" />
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for Shape module, added MyLinkedList (not final)">
+      <change afterPath="$PROJECT_DIR$/List/src/kks/oop/list/application/ListApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Shapes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/application/ShapeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/application/ShapeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyLinkedList/MyLinkedList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/List/List.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyLinkedList/src/kks/oop/list/ListItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/kks/oop/list/ListItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyLinkedList/src/kks/oop/list/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/kks/oop/list/MyLinkedList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +72,7 @@
       <recent name="shapes" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ShapeApplication">
+  <component name="RunManager" selected="Application.ListApp">
     <configuration name="ArraylistHomeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kks.oop.arraylisthome.application.ArraylistHomeApp" />
       <module name="ArrayListHome" />
@@ -120,12 +112,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RangeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kks.oop.range.application.RangeApplication" />
-      <module name="Range" />
+    <configuration name="ListApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kks.oop.list.application.ListApp" />
+      <module name="List" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="kks.oop.range.application.*" />
+          <option name="PATTERN" value="kks.oop.list.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -148,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ListApp" />
         <item itemvalue="Application.ShapeApplication" />
         <item itemvalue="Application.BinaryTreeApp" />
         <item itemvalue="Application.LambdaModuleApp" />
         <item itemvalue="Application.ArraylistHomeApp" />
-        <item itemvalue="Application.RangeApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -375,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632832944434</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fix for Shape module, added MyLinkedList (not final)">
+      <created>1632938550707</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1632938550707</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -440,7 +439,8 @@
     <MESSAGE value="Small fix for Range module" />
     <MESSAGE value="ArrayListHome module" />
     <MESSAGE value="Added tree module, add sample application( BinaryTreeApp.java ) with test of result." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tree module, add sample application( BinaryTreeApp.java ) with test of result." />
+    <MESSAGE value="fix for Shape module, added MyLinkedList (not final)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix for Shape module, added MyLinkedList (not final)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
