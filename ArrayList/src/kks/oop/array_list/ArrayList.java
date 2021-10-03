@@ -1,8 +1,10 @@
-package kks.oop.arraylist;
+package kks.oop.array_list;
 
 import java.util.*;
 
 public class ArrayList<T> implements List<T> {
+    private static final int DEFAULT_CAPACITY = 10;
+
     private T[] items;
     private int size;
     private int modCount = 0;
@@ -15,8 +17,7 @@ public class ArrayList<T> implements List<T> {
         if (capacity < 0) {
             throw new IllegalArgumentException("Capacity = " + capacity + " must be >=0");
         }
-
-        // warning
+        //noinspection unchecked
         items = (T[]) new Object[capacity];
     }
 
@@ -29,11 +30,7 @@ public class ArrayList<T> implements List<T> {
             throw new IllegalArgumentException("List shouldn't be null");
         }
 
-        if (list.size() == 0) {
-            // warning
-            items = (T[]) new Object[]{};
-        }
-        // warning
+        //noinspection unchecked
         items = (T[]) new Object[list.size()];
         size = list.size();
 
@@ -80,17 +77,19 @@ public class ArrayList<T> implements List<T> {
         return Arrays.copyOf(items, size);
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public <E> E[] toArray(E[] a) {
         if (a == null) {
-            throw new NullPointerException("Empty array");
+            throw new NullPointerException("Array is NULL");
         }
 
-        if ((a.length < size)) {
-            // warning: Unchecked cast: 'java.lang.Object[]' to 'T[]'
+        if (a.length < size) {
+            //noinspection unchecked
             return (E[]) Arrays.copyOf(items, size, a.getClass());
         }
 
+        //noinspection SuspiciousSystemArraycopy
         System.arraycopy(items, 0, a, 0, size);
 
         if (a.length > size) {
@@ -109,8 +108,14 @@ public class ArrayList<T> implements List<T> {
 
     @Override
     public boolean remove(Object o) {
-        if (indexOf(o) != -1) {
-            remove(indexOf(o));
+        if (size == 0) {
+            return false;
+        }
+
+        int index = indexOf(o);
+
+        if (index != -1) {
+            remove(index);
 
             return true;
         }
@@ -118,6 +123,7 @@ public class ArrayList<T> implements List<T> {
         return false;
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public boolean containsAll(Collection<?> c) {
         if (c == null) {
@@ -133,18 +139,20 @@ public class ArrayList<T> implements List<T> {
         return true;
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public boolean addAll(Collection<? extends T> c) {
         return addAll(size, c);
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public boolean addAll(int index, Collection<? extends T> c) {
+        checkIndex(index, true);
+
         if (c == null) {
             throw new IllegalArgumentException("Collection shouldn't be null");
         }
-
-        rangeIndex(index);
 
         if (c.isEmpty()) {
             return false;
@@ -156,8 +164,8 @@ public class ArrayList<T> implements List<T> {
 
         int i = index;
 
-        for (T t : c) {
-            items[i] = t;
+        for (T item : c) {
+            items[i] = item;
             i++;
         }
 
@@ -167,77 +175,84 @@ public class ArrayList<T> implements List<T> {
         return true;
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public boolean removeAll(Collection<?> c) {
-        if (c == null){
+        if (c == null) {
             throw new NullPointerException("Collection shouldn't be NULL");
         }
 
-        if (c.isEmpty()){
+        if (c.isEmpty()) {
             return false;
         }
 
-        int oldModCount = modCount;
+        int oldSize = size;
 
-        for (int i = size-1; i >= 0; i--){
-            if (c.contains(items[i])){
+        for (int i = oldSize - 1; i >= 0; i--) {
+            if (c.contains(items[i])) {
                 remove(i);
             }
         }
 
-        return modCount != oldModCount;
+        return size != oldSize;
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public boolean retainAll(Collection<?> c) {
-        if (c == null){
+        if (c == null) {
             throw new NullPointerException("Collection shouldn't be NULL");
         }
 
-        int oldModCount = modCount;
+        int oldSize = size;
 
-        for (int i = size-1; i >= 0; i--){
-            if (!c.contains(items[i])){
+        for (int i = oldSize - 1; i >= 0; i--) {
+            if (!c.contains(items[i])) {
                 remove(i);
             }
         }
 
-        return modCount != oldModCount;
+        return size != oldSize;
     }
 
     @Override
     public void clear() {
-        Arrays.fill(items, null);
+        if (size == 0) {
+            return;
+        }
+
+        for (int i = 0; i < size; i++) {
+            items[i] = null;
+        }
 
         size = 0;
-
         modCount++;
     }
 
     @Override
     public T get(int index) {
-        rangeIndex(index);
+        checkIndex(index, false);
 
         return items[index];
     }
 
     @Override
     public T set(int index, T item) {
-        rangeIndex(index);
+        checkIndex(index, false);
 
-        T oldValue = items[index];
+        T oldItem = items[index];
         items[index] = item;
 
-        return oldValue;
+        return oldItem;
     }
 
     @Override
     public void add(int index, T item) {
-        if (size + 1 > items.length) {
+        if (size >= items.length) {
             increaseCapacity();
         }
 
-        rangeIndex(index);
+        checkIndex(index, true);
 
         if (index < size) {
             System.arraycopy(items, index, items, index + 1, size - index);
@@ -251,15 +266,16 @@ public class ArrayList<T> implements List<T> {
 
     @Override
     public T remove(int index) {
-        rangeIndex(index);
+        checkIndex(index, false);
 
-        T oldValue = items[index];
+        T removedItem = items[index];
         System.arraycopy(items, index + 1, items, index, size - (index + 1));
 
+        items[size - 1] = null;
         size--;
         modCount++;
 
-        return oldValue;
+        return removedItem;
     }
 
     @Override
@@ -285,45 +301,37 @@ public class ArrayList<T> implements List<T> {
     }
 
     @Override
-    public String toString(){
-        if (size == 0){
+    public String toString() {
+        if (size == 0) {
             return "[]";
         }
 
-        StringBuilder str = new StringBuilder("[");
+        StringBuilder stringBuilder = new StringBuilder("[");
 
-        for (int i = 0; i < size; i++){
-            if (i>0){
-                str.append(", ");
-            }
-
-            str.append(items[i]);
+        for (int i = 0; i < size; i++) {
+            stringBuilder.append(items[i]).append(", ");
         }
 
-        str.append("]");
+        stringBuilder.delete(stringBuilder.length() - 2, stringBuilder.length());
+        stringBuilder.append("]");
 
-        return str.toString();
+        return stringBuilder.toString();
     }
 
     /***
      * Check out-of-bounds index
      * @param index value
+     * @param isUpperBoundsIncluded include in check upper bounds of array (include array.length() or not)
      */
-    private void rangeIndex(int index) {
-        if (index < 0) {
-            throw new IndexOutOfBoundsException("Index \"" + index + "\" should be >0");
-        }
+    private void checkIndex(int index, boolean isUpperBoundsIncluded) {
+        int upperBound = isUpperBoundsIncluded ? size : size + 1;
 
-        if (index > size) {
-            throw new IndexOutOfBoundsException("Index \"" + index + "\" should be less then array list size");
+        if (index < 0 || index >= upperBound) {
+            throw new IndexOutOfBoundsException("Index \"" + index + "\" out of bounds 0.." + (upperBound - 1) + ".");
         }
     }
 
     private void ensureCapacity(int minCapacity) {
-        if (minCapacity < 0) {
-            throw new IllegalArgumentException("Capacity = " + minCapacity + " must be >=0");
-        }
-
         if (items.length < minCapacity) {
             items = Arrays.copyOf(items, minCapacity);
         }
@@ -336,23 +344,28 @@ public class ArrayList<T> implements List<T> {
     }
 
     private void increaseCapacity() {
-        items = Arrays.copyOf(items, items.length * 2);
-    }
+        int newCapacity = DEFAULT_CAPACITY;
 
-    // Without realisation
-    @Override
-    public ListIterator listIterator() {
-        return null;
-    }
+        if (modCount != 0) {
+            newCapacity = items.length * 2;
+        }
 
-    @Override
-    public ListIterator listIterator(int index) {
-        return null;
+        items = Arrays.copyOf(items, newCapacity);
     }
 
     @Override
-    public List subList(int fromIndex, int toIndex) {
-        return null;
+    public ListIterator<T> listIterator() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    @Override
+    public ListIterator<T> listIterator(int index) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    @Override
+    public List<T> subList(int fromIndex, int toIndex) {
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     /***
@@ -360,7 +373,7 @@ public class ArrayList<T> implements List<T> {
      */
     private class ArrayListIterator implements Iterator<T> {
         private int currentIndex = -1;
-        private final int currentModCount = modCount;
+        private final int initialModCount = modCount;
 
         @Override
         public boolean hasNext() {
@@ -373,7 +386,7 @@ public class ArrayList<T> implements List<T> {
                 throw new NoSuchElementException("Next element doesn't exist.");
             }
 
-            if (currentModCount != modCount) {
+            if (initialModCount != modCount) {
                 throw new ConcurrentModificationException("The list has been changed.");
             }
 

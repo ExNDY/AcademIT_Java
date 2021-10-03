@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="some fix for Vector module">
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="some fix for Lambda module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LambdaModule/LambdaModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda/Lambda.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LambdaModule/src/kks/oop/lambdamodule/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda/src/kks/oop/lambda/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LambdaModule/src/kks/oop/lambdamodule/application/LambdaModuleApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda/src/kks/oop/lambda/application/LambdaApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArrayList/src/kks/oop/arraylist/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArrayList/src/kks/oop/arraylist/application/ArrayListApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/application/ArrayListApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -400,7 +399,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633271473083</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="some fix for Lambda module">
+      <created>1633272218527</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1633272218527</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -469,6 +475,7 @@
     <MESSAGE value="added Module List, ListApp" />
     <MESSAGE value="added Hashtable module, fix for ArraylistHome" />
     <MESSAGE value="some fix for Vector module" />
-    <option name="LAST_COMMIT_MESSAGE" value="some fix for Vector module" />
+    <MESSAGE value="some fix for Lambda module" />
+    <option name="LAST_COMMIT_MESSAGE" value="some fix for Lambda module" />
   </component>
 </project>

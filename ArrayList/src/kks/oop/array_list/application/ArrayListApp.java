@@ -1,9 +1,8 @@
-package kks.oop.arraylist.application;
+package kks.oop.array_list.application;
 
-import kks.oop.arraylist.ArrayList;
+import kks.oop.array_list.ArrayList;
 
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.LinkedList;
 
 public class ArrayListApp {
@@ -29,7 +28,7 @@ public class ArrayListApp {
         System.out.println("Remove 505: " + list.remove(Integer.valueOf(505)));
         System.out.println("List of ArrayList: " + list);
 
-        Integer[] array = new Integer[]{11, 25, 36, 45, 99};
+        Integer[] array = {11, 25, 36, 45, 99};
         LinkedList<Integer> linkedList = new LinkedList<>(Arrays.asList(array));
 
         System.out.println("AddAll array in list. Result: " + list.addAll(linkedList));
@@ -44,9 +43,8 @@ public class ArrayListApp {
         System.out.println("List to Array: Array = " + Arrays.toString(a));
         System.out.println("Iterator use: ");
 
-        // Ignore: 'for' loop replaceable with enhanced 'for'
-        for (Iterator<Integer> i = list.iterator(); i.hasNext(); ) {
-            System.out.print(i.next() + " | ");
+        for (Integer integer : list) {
+            System.out.print(integer + " | ");
         }
     }
 }
