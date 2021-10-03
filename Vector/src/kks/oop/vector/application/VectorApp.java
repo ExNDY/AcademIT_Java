@@ -3,10 +3,10 @@ package kks.oop.vector.application;
 
 import kks.oop.vector.Vector;
 
-import java.util.Arrays;
-
 public class VectorApp {
     public static void main(String[] args) {
+        System.out.println("Create vector: ");
+
         Vector v1 = new Vector(new double[]{85.0, 115.0, 156.0});
 
         System.out.println(v1);
@@ -30,10 +30,6 @@ public class VectorApp {
         v1.set(1, 110.0);
 
         System.out.println(v1);
-
-        double[] array = v1.getAll();
-
-        System.out.println("Test for getAll command. Result Array: " + Arrays.toString(array));
         System.out.println("Create Vector v2:");
 
         Vector v2 = new Vector(new double[]{5.0, 71.0, 81.0});
@@ -56,13 +52,12 @@ public class VectorApp {
         System.out.println(v1);
         System.out.println("Test reflect command for v1: ");
 
-        v1.reflect();
+        v1.reverse();
 
         System.out.println(v1);
         System.out.println("Test Static method getSum(v1, v2):");
         System.out.println(v1);
         System.out.println(v2);
-
 
         Vector resultVector = Vector.getSum(v1, v2);
 
@@ -71,7 +66,7 @@ public class VectorApp {
         System.out.println(v1);
         System.out.println(v2);
 
-        resultVector = Vector.getSubtract(v1, v2);
+        resultVector = Vector.getDifference(v1, v2);
 
         System.out.println(resultVector);
         System.out.println("Test Static method getScalarProduct(v1, v2):");
