@@ -1,24 +1,21 @@
-package kks.oop.arraylisthome;
+package kks.oop.array_list_home;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class TaskUtils {
-    public static ArrayList<String> getStringsFromFile(String path) {
-        try (Scanner s = new Scanner(new FileInputStream(path))) {
+    public static ArrayList<String> getStringsFromFile(String path) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             ArrayList<String> list = new ArrayList<>();
+            String line;
 
-            while (s.hasNextLine()) {
-                list.add(s.nextLine());
+            while ((line = reader.readLine()) != null) {
+                list.add(line);
             }
 
             return list;
-        } catch (FileNotFoundException ex) {
-            System.out.println("FileNotFoundException: " + ex);
-
-            return null;
         }
     }
 
@@ -27,9 +24,11 @@ public class TaskUtils {
             throw new NullPointerException("List shouldn't be NULL");
         }
 
-        for (int i = list.size() - 1; i != 0; i--) {
-            if (list.get(i) % 2 == 0) {
-                list.remove(i);
+        if (list.size() != 0) {
+            for (int i = list.size() - 1; i != 0; i--) {
+                if (list.get(i) % 2 == 0) {
+                    list.remove(i);
+                }
             }
         }
     }
@@ -39,7 +38,7 @@ public class TaskUtils {
             throw new NullPointerException("List shouldn't be NULL");
         }
 
-        ArrayList<Integer> uniqueItemsList = new ArrayList<>();
+        ArrayList<Integer> uniqueItemsList = new ArrayList<>(0);
 
         for (Integer item : list) {
             if (!uniqueItemsList.contains(item)) {

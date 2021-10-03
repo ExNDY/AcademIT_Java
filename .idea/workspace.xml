@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for Shape module, added MyLinkedList (not final)">
-      <change afterPath="$PROJECT_DIR$/List/src/kks/oop/list/application/ListApp.java" afterDir="false" />
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="added Module List, ListApp">
+      <change afterPath="$PROJECT_DIR$/HashTable/HashTable.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyLinkedList/MyLinkedList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/List/List.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyLinkedList/src/kks/oop/list/ListItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/kks/oop/list/ListItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyLinkedList/src/kks/oop/list/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/kks/oop/list/MyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArrayListHome/src/kks/oop/arraylisthome/TaskUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayListHome/src/kks/oop/array_list_home/TaskUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArrayListHome/src/kks/oop/arraylisthome/application/ArraylistHomeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayListHome/src/kks/oop/array_list_home/application/ArraylistHomeApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,13 +72,13 @@
       <recent name="shapes" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ListApp">
+  <component name="RunManager" selected="Application.ArraylistHomeApp">
     <configuration name="ArraylistHomeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kks.oop.arraylisthome.application.ArraylistHomeApp" />
+      <option name="MAIN_CLASS_NAME" value="kks.oop.array_list_home.application.ArraylistHomeApp" />
       <module name="ArrayListHome" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="kks.oop.arraylisthome.application.*" />
+          <option name="PATTERN" value="kks.oop.array_list_home.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -140,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArraylistHomeApp" />
         <item itemvalue="Application.ListApp" />
         <item itemvalue="Application.ShapeApplication" />
         <item itemvalue="Application.BinaryTreeApp" />
         <item itemvalue="Application.LambdaModuleApp" />
-        <item itemvalue="Application.ArraylistHomeApp" />
       </list>
     </recent_temporary>
   </component>
@@ -374,7 +374,21 @@
       <option name="project" value="LOCAL" />
       <updated>1632938550707</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="added Module List, ListApp">
+      <created>1633008678348</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1633008678348</updated>
+    </task>
+    <task id="LOCAL-00033" summary="added Module List, ListApp">
+      <created>1633008692269</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1633008692269</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -440,7 +454,8 @@
     <MESSAGE value="ArrayListHome module" />
     <MESSAGE value="Added tree module, add sample application( BinaryTreeApp.java ) with test of result." />
     <MESSAGE value="fix for Shape module, added MyLinkedList (not final)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix for Shape module, added MyLinkedList (not final)" />
+    <MESSAGE value="added Module List, ListApp" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Module List, ListApp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
