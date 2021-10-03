@@ -15,7 +15,7 @@ public class ArrayList<T> implements List<T> {
      */
     public ArrayList(int capacity) {
         if (capacity < 0) {
-            throw new IllegalArgumentException("Capacity = " + capacity + " must be >=0");
+            throw new IllegalArgumentException("Capacity = " + capacity + ", must be >= 0");
         }
         //noinspection unchecked
         items = (T[]) new Object[capacity];
@@ -27,7 +27,7 @@ public class ArrayList<T> implements List<T> {
      */
     public ArrayList(List<T> list) {
         if (list == null) {
-            throw new IllegalArgumentException("List shouldn't be null");
+            throw new IllegalArgumentException("List shouldn't be NULL");
         }
 
         //noinspection unchecked
@@ -45,7 +45,7 @@ public class ArrayList<T> implements List<T> {
      */
     public ArrayList(T[] array) {
         if (array == null) {
-            throw new IllegalArgumentException("Array shouldn't be null");
+            throw new IllegalArgumentException("Array shouldn't be NULL");
         }
 
         items = Arrays.copyOf(array, array.length);
@@ -127,7 +127,7 @@ public class ArrayList<T> implements List<T> {
     @Override
     public boolean containsAll(Collection<?> c) {
         if (c == null) {
-            throw new IllegalArgumentException("Collection shouldn't be null");
+            throw new IllegalArgumentException("Collection shouldn't be NULL");
         }
 
         for (Object o : c) {
@@ -151,7 +151,7 @@ public class ArrayList<T> implements List<T> {
         checkIndex(index, true);
 
         if (c == null) {
-            throw new IllegalArgumentException("Collection shouldn't be null");
+            throw new IllegalArgumentException("Collection shouldn't be NULL");
         }
 
         if (c.isEmpty()) {
