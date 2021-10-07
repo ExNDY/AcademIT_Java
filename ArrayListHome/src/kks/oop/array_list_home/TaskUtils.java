@@ -9,10 +9,10 @@ public class TaskUtils {
     public static ArrayList<String> getStringsFromFile(String path) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             ArrayList<String> list = new ArrayList<>();
-            String line;
+            String string;
 
-            while ((line = reader.readLine()) != null) {
-                list.add(line);
+            while ((string = reader.readLine()) != null) {
+                list.add(string);
             }
 
             return list;
@@ -24,11 +24,9 @@ public class TaskUtils {
             throw new NullPointerException("List shouldn't be NULL");
         }
 
-        if (list.size() != 0) {
-            for (int i = list.size() - 1; i != 0; i--) {
-                if (list.get(i) % 2 == 0) {
-                    list.remove(i);
-                }
+        for (int i = list.size() - 1; i >= 0; i--) {
+            if (list.get(i) % 2 == 0) {
+                list.remove(i);
             }
         }
     }
@@ -38,7 +36,7 @@ public class TaskUtils {
             throw new NullPointerException("List shouldn't be NULL");
         }
 
-        ArrayList<Integer> uniqueItemsList = new ArrayList<>(0);
+        ArrayList<Integer> uniqueItemsList = new ArrayList<>(list.size());
 
         for (Integer item : list) {
             if (!uniqueItemsList.contains(item)) {
