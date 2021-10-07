@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="some fix for Lambda module">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArrayList/src/kks/oop/arraylist/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArrayList/src/kks/oop/arraylist/application/ArrayListApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/application/ArrayListApp.java" afterDir="false" />
-    </list>
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="some fix for ArrayList module" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -406,7 +402,21 @@
       <option name="project" value="LOCAL" />
       <updated>1633272218527</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="some fix for ArrayList module">
+      <created>1633285896058</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1633285896059</updated>
+    </task>
+    <task id="LOCAL-00038" summary="some fix for ArrayList module">
+      <created>1633286059702</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1633286059702</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -476,6 +486,7 @@
     <MESSAGE value="added Hashtable module, fix for ArraylistHome" />
     <MESSAGE value="some fix for Vector module" />
     <MESSAGE value="some fix for Lambda module" />
-    <option name="LAST_COMMIT_MESSAGE" value="some fix for Lambda module" />
+    <MESSAGE value="some fix for ArrayList module" />
+    <option name="LAST_COMMIT_MESSAGE" value="some fix for ArrayList module" />
   </component>
 </project>

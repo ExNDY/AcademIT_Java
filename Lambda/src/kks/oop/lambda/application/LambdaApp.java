@@ -28,43 +28,36 @@ public class LambdaApp {
 
         printList(personsList);
 
-        List<String> uniqueNamesList = personsList
-                .stream()
+        List<String> uniqueNamesList = personsList.stream()
                 .map(Person::getName)
                 .distinct()
                 .collect(Collectors.toList());
 
-        String uniqueNamesString = uniqueNamesList
-                .stream()
+        String uniqueNamesString = uniqueNamesList.stream()
                 .collect(Collectors.joining("; ", "Unique names: ", "."));
 
         System.out.println(uniqueNamesString);
 
-        List<Person> personsListFilteredByAge = personsList
-                .stream()
+        List<Person> personsListFilteredByAge = personsList.stream()
                 .filter(person -> person.getAge() < 18)
                 .collect(Collectors.toList());
 
-        double avgAge = personsListFilteredByAge
-                .stream()
+        double avgAge = personsListFilteredByAge.stream()
                 .collect(Collectors.averagingDouble(Person::getAge));
 
         System.out.println("Persons younger 18 age: " + personsListFilteredByAge + ", average age = " + avgAge);
 
-        Map<String, Double> nameAvgAgeMap = personsList
-                .stream()
+        Map<String, Double> nameAverageAgeMap = personsList.stream()
                 .collect(Collectors.groupingBy(Person::getName, Collectors.averagingInt(Person::getAge)));
 
-        System.out.println("Map<Name, avgAge>: " + nameAvgAgeMap);
+        System.out.println("Map<Name, averageAge>: " + nameAverageAgeMap);
 
-        List<Person> personsListFilteredByAgeRange = personsList
-                .stream()
+        List<Person> personsListFilteredByAgeRange = personsList.stream()
                 .filter(person -> person.getAge() >= 20 && person.getAge() <= 45)
                 .sorted((p1, p2) -> p2.getAge() - p1.getAge())
                 .collect(Collectors.toList());
 
-        String names = personsListFilteredByAgeRange
-                .stream()
+        String names = personsListFilteredByAgeRange.stream()
                 .map(Person::getName)
                 .collect(Collectors.joining(", "));
 
