@@ -48,7 +48,7 @@ public class Square implements Shape {
 
         Square s = (Square) o;
 
-        return this.sideLength == s.sideLength;
+        return sideLength == s.sideLength;
     }
 
     @Override

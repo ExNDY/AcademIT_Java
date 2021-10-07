@@ -34,9 +34,9 @@ public class ShapeApplication {
 
         System.out.println("The maximum area is a " + maxAreaShape);
 
-        Shape secondByPerimeterShape = getShapeWithSecondLargestOfPerimeter(shapes);
+        Shape secondPerimeterShape = getShapeWithSecondLargestPerimeter(shapes);
 
-        System.out.println("The second value by Perimeter is a " + secondByPerimeterShape);
+        System.out.println("The second value by Perimeter is a " + secondPerimeterShape);
     }
 
     private static Shape[] getShapesArray() {
@@ -57,12 +57,16 @@ public class ShapeApplication {
             throw new NullPointerException("Array of shapes shouldn't be NULL or EMPTY");
         }
 
+        if (shapes.length == 1) {
+            return shapes[0];
+        }
+
         Arrays.sort(shapes, new AreaComparator());
 
         return shapes[shapes.length - 1];
     }
 
-    private static Shape getShapeWithSecondLargestOfPerimeter(Shape[] shapes) {
+    private static Shape getShapeWithSecondLargestPerimeter(Shape[] shapes) {
         if (shapes == null || shapes.length == 0) {
             throw new NullPointerException("Array of shapes shouldn't be NULL or EMPTY");
         }

@@ -23,7 +23,7 @@ public class Circle implements Shape {
 
     @Override
     public double getArea() {
-        return 2 * Math.PI * Math.pow(radius, 2);
+        return Math.PI * radius * radius;
     }
 
     @Override
@@ -46,7 +46,7 @@ public class Circle implements Shape {
             return false;
         }
 
-        return this.radius == ((Circle) o).radius;
+        return radius == ((Circle) o).radius;
     }
 
     @Override

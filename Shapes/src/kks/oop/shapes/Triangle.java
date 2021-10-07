@@ -50,16 +50,8 @@ public class Triangle implements Shape {
         this.y3 = y3;
     }
 
-    public double getSideABLength(){
+    private double getSideLength(double x1, double y1, double x2, double y2) {
         return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
-    }
-
-    public double getSideBCLength(){
-        return Math.sqrt(Math.pow((x3 - x2), 2) + Math.pow((y3 - y2), 2));
-    }
-
-    public double getSideCALength(){
-        return Math.sqrt(Math.pow((x1 - x3), 2) + Math.pow((y1 - y3), 2));
     }
 
     @Override
@@ -74,19 +66,22 @@ public class Triangle implements Shape {
 
     @Override
     public double getArea() {
-        double semiPerimeter = (getSideABLength() + getSideBCLength() + getSideCALength()) / 2;
+        double sideABLength = getSideLength(x1, y1, x2, y2);
+        double sideBCLength = getSideLength(x2, y2, x3, y3);
+        double sideCALength = getSideLength(x3, y3, x1, y1);
+        double semiPerimeter = (sideABLength + sideBCLength + sideCALength) / 2;
 
-        return Math.sqrt(semiPerimeter * (semiPerimeter - getSideABLength()) * (semiPerimeter - getSideBCLength()) * (semiPerimeter - getSideCALength()));
+        return Math.sqrt(semiPerimeter * (semiPerimeter - sideABLength) * (semiPerimeter - sideBCLength) * (semiPerimeter - sideCALength));
     }
 
     @Override
     public double getPerimeter() {
-        return getSideABLength() + getSideBCLength() + getSideCALength();
+        return getSideLength(x1, y1, x2, y2) + getSideLength(x2, y2, x3, y3) + getSideLength(x3, y3, x1, y1);
     }
 
     @Override
     public String toString() {
-        return "Triangle: A(" + x1 + ";" + y1 +"), B(" + x2 + ";" + y2 + "), C(" + x3 + ";" + y3 + "). Area = " + getArea() + ", perimeter = " + getPerimeter() + ".";
+        return "Triangle: A(" + x1 + "; " + y1 + "), B(" + x2 + "; " + y2 + "), C(" + x3 + "; " + y3 + "). Area = " + getArea() + ", perimeter = " + getPerimeter() + ".";
     }
 
     @Override
@@ -101,9 +96,9 @@ public class Triangle implements Shape {
 
         Triangle t = (Triangle) o;
 
-        return this.x1 == t.x1 && this.y1 == t.y1
-                && this.x2 == t.x2 && this.y2 == t.y2
-                && this.x3 == t.x3 && this.y3 == t.y3;
+        return x1 == t.x1 && y1 == t.y1
+                && x2 == t.x2 && y2 == t.y2
+                && x3 == t.x3 && y3 == t.y3;
     }
 
     @Override
