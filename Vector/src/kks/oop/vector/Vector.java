@@ -7,14 +7,14 @@ public class Vector {
 
     public Vector(int size) {
         if (size <= 0) {
-            throw new IllegalArgumentException("Size of array should be more then 0. Current size = " + size);
+            throw new IllegalArgumentException("Size of vector should be more then 0. Current size = " + size);
         }
 
         elements = new double[size];
     }
 
-    public Vector(Vector v) {
-        this(v.elements);
+    public Vector(Vector vector) {
+        this(vector.elements);
     }
 
     public Vector(double[] array) {
@@ -23,7 +23,7 @@ public class Vector {
 
     public Vector(int size, double[] array) {
         if (size <= 0) {
-            throw new IllegalArgumentException("Size of array should be more then 0. Current size = " + size);
+            throw new IllegalArgumentException("Size of vector should be more then 0. Current size = " + size);
         }
 
         if (array == null) {
@@ -41,7 +41,7 @@ public class Vector {
         double sum = 0;
 
         for (double e : elements) {
-            sum += Math.pow(e, 2);
+            sum += e * e;
         }
 
         return Math.sqrt(sum);
@@ -121,10 +121,10 @@ public class Vector {
         checkVectors(vector1, vector2);
 
         double result = 0.0;
-        int min = Math.min(vector1.elements.length, vector2.elements.length);
+        int minSize = Math.min(vector1.elements.length, vector2.elements.length);
 
-        for (int i = 0; i < min; i++) {
-            result += (vector1.elements[i] * vector2.elements[i]);
+        for (int i = 0; i < minSize; i++) {
+            result += vector1.elements[i] * vector2.elements[i];
         }
 
         return result;

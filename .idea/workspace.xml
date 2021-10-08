@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for ArrayListHome">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Tree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/src/kks/oop/tree/application/BinaryTreeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/kks/oop/tree/application/BinaryTreeApp.java" afterDir="false" />
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for Tree">
+      <change beforePath="$PROJECT_DIR$/Vector/src/kks/oop/vector/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vector/src/kks/oop/vector/Vector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -442,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633610547697</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="fix for Tree">
+      <created>1633714337267</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1633714337267</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -490,7 +494,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Range task. step1" />
     <MESSAGE value="Range task. Intersection complete" />
     <MESSAGE value="Range task. Merge complete" />
     <MESSAGE value="Range task. Complete" />
@@ -515,6 +518,7 @@
     <MESSAGE value="little fix for LambdaApp" />
     <MESSAGE value="fix for Shapes" />
     <MESSAGE value="fix for ArrayListHome" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix for ArrayListHome" />
+    <MESSAGE value="fix for Tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix for Tree" />
   </component>
 </project>
