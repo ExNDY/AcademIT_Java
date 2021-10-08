@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for Shapes" />
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for ArrayListHome">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/src/kks/oop/tree/application/BinaryTreeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/kks/oop/tree/application/BinaryTreeApp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +70,7 @@
       <recent name="shapes" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ShapeApplication">
+  <component name="RunManager" selected="Application.BinaryTreeApp">
     <configuration name="ArraylistHomeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kks.oop.array_list_home.application.ArraylistHomeApp" />
       <module name="ArrayListHome" />
@@ -133,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BinaryTreeApp" />
         <item itemvalue="Application.ShapeApplication" />
         <item itemvalue="Application.VectorApp" />
         <item itemvalue="Application.ArraylistHomeApp" />
         <item itemvalue="Application.ListApp" />
-        <item itemvalue="Application.BinaryTreeApp" />
       </list>
     </recent_temporary>
   </component>
@@ -430,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633609932913</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="fix for ArrayListHome">
+      <created>1633610547697</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1633610547697</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -478,7 +490,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Lecture 0. GIT" />
     <MESSAGE value="Range task. step1" />
     <MESSAGE value="Range task. Intersection complete" />
     <MESSAGE value="Range task. Merge complete" />
@@ -503,6 +514,7 @@
     <MESSAGE value="some fix for ArrayList module" />
     <MESSAGE value="little fix for LambdaApp" />
     <MESSAGE value="fix for Shapes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix for Shapes" />
+    <MESSAGE value="fix for ArrayListHome" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix for ArrayListHome" />
   </component>
 </project>

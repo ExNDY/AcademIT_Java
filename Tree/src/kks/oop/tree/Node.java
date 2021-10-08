@@ -1,6 +1,6 @@
 package kks.oop.tree;
 
-public class Node<T> {
+class Node<T> {
     private T value;
     private Node<T> leftChild;
     private Node<T> rightChild;

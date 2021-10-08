@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 
 public class Tree<T> {
     private Node<T> root;
-    private int size = 0;
+    private int size;
     private Comparator<? super T> comparator;
 
     public Tree() {
@@ -18,22 +18,10 @@ public class Tree<T> {
     }
 
     public Tree(Comparator<? super T> comparator) {
-        if (comparator == null) {
-            throw new NullPointerException("Comparator shouldn't be NULL");
-        }
-
         this.comparator = comparator;
     }
 
     public Tree(Comparator<? super T> comparator, T rootValue) {
-        if (comparator == null) {
-            throw new NullPointerException("Comparator shouldn't be NULL");
-        }
-
-        if (rootValue == null) {
-            throw new NullPointerException("Root value shouldn't be NULL");
-        }
-
         this.comparator = comparator;
         this.root = new Node<>(rootValue);
         size++;
@@ -45,15 +33,11 @@ public class Tree<T> {
 
     /***
      * Input new node in root
-     * @param newNode value of new Node
+     * @param value value of new Node
      */
-    public boolean add(T newNode) {
-        if (newNode == null) {
-            throw new NullPointerException("Node shouldn't be NULL");
-        }
-
+    public boolean add(T value) {
         if (root == null) {
-            root = new Node<>(newNode);
+            root = new Node<>(value);
             size++;
 
             return true;
@@ -62,7 +46,7 @@ public class Tree<T> {
         Node<T> node = root;
 
         while (true) {
-            int result = compare(newNode, node.getValue());
+            int result = compare(value, node.getValue());
 
             if (result < 0) {
                 if (node.getLeftChild() != null) {
@@ -71,7 +55,7 @@ public class Tree<T> {
                     continue;
                 }
 
-                node.setLeftChild(new Node<>(newNode));
+                node.setLeftChild(new Node<>(value));
             } else {
                 if (node.getRightChild() != null) {
                     node = node.getRightChild();
@@ -79,7 +63,7 @@ public class Tree<T> {
                     continue;
                 }
 
-                node.setRightChild(new Node<>(newNode));
+                node.setRightChild(new Node<>(value));
             }
 
             break;
@@ -93,10 +77,6 @@ public class Tree<T> {
     public boolean contains(T value) {
         if (root == null) {
             return false;
-        }
-
-        if (value == null) {
-            throw new NullPointerException("Node shouldn't be NULL");
         }
 
         Node<T> node = root;
@@ -188,11 +168,8 @@ public class Tree<T> {
             return true;
         }
 
-        // Moved to a separate line only for readability
-        boolean hasOnlyLeftChild = removedNode.getLeftChild() != null && removedNode.getRightChild() == null;
-        boolean hasOnlyRightChild = removedNode.getLeftChild() == null && removedNode.getRightChild() != null;
-
-        if (hasOnlyLeftChild || hasOnlyRightChild) {
+        // Remove node with one child
+        if (removedNode.getLeftChild() == null || removedNode.getRightChild() == null) {
             Node<T> deleteNodeChild = removedNode.getLeftChild() != null ? removedNode.getLeftChild() : removedNode.getRightChild();
 
             if (removedNodeParent == null) {
@@ -242,13 +219,13 @@ public class Tree<T> {
     }
 
     public void breadthFirstSearch(Consumer<T> consumer) {
-        if (consumer == null) {
-            throw new NullPointerException("Consumer shouldn't be NULL");
+        if (root == null) {
+            return;
         }
 
         Queue<Node<T>> queue = new LinkedList<>();
 
-        queue.add(this.root);
+        queue.add(root);
 
         while (!queue.isEmpty()) {
             Node<T> node = queue.poll();
@@ -266,25 +243,25 @@ public class Tree<T> {
     }
 
     public void depthFirstSearch(Consumer<T> consumer) {
-        if (consumer == null) {
-            throw new NullPointerException("Consumer shouldn't be NULL");
+        if (root == null) {
+            return;
         }
 
         Deque<Node<T>> deque = new ArrayDeque<>(size);
 
-        deque.addLast(root);
+        deque.addFirst(root);
 
         while (!deque.isEmpty()) {
-            Node<T> node = deque.removeLast();
+            Node<T> node = deque.removeFirst();
 
             consumer.accept(node.getValue());
 
             if (node.getLeftChild() != null) {
-                deque.addLast(node.getLeftChild());
+                deque.addFirst(node.getLeftChild());
             }
 
             if (node.getRightChild() != null) {
-                deque.addLast(node.getRightChild());
+                deque.addFirst(node.getRightChild());
             }
         }
     }
@@ -294,7 +271,9 @@ public class Tree<T> {
     }
 
     private void depthFirstSearchRecursive(Node<T> node, Consumer<T> consumer) {
-        if (node == null) return;
+        if (node == null) {
+            return;
+        }
 
         consumer.accept(node.getValue());
 
@@ -304,36 +283,48 @@ public class Tree<T> {
 
     private int compare(T value1, T value2) {
         if (comparator == null) {
-            // warning: Unchecked cast
-            Comparable<? super T> comparableValue = (Comparable<? super T>) value1;
+            if (value1 != null && value2 != null) {
+                //noinspection unchecked
+                return ((Comparable<T>) value1).compareTo(value2);
+            }
 
-            return Integer.compare(comparableValue.compareTo(value2), 0);
+            if (value1 == null && value2 == null) {
+                return 0;
+            }
+
+            if (value1 == null) {
+                return -1;
+            }
+
+            return 1;
         }
 
-        return Integer.compare(comparator.compare(value1, value2), 0);
+        return comparator.compare(value1, value2);
     }
 
     @Override
     public String toString() {
-        if (root == null) return "Tree is empty";
+        if (root == null) {
+            return "Tree is empty";
+        }
 
         Deque<Node<T>> deque = new LinkedList<>();
 
         deque.addLast(root);
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder("[");
 
         int appendedElementsCount = 0;
 
         while (!deque.isEmpty()) {
             Node<T> element = deque.removeLast();
 
-            sb.append(element.getValue());
+            stringBuilder.append(element.getValue());
 
             appendedElementsCount++;
 
             if (appendedElementsCount != size) {
-                sb.append(", ");
+                stringBuilder.append(", ");
             }
 
             if (element.getRightChild() != null) {
@@ -345,6 +336,6 @@ public class Tree<T> {
             }
         }
 
-        return sb.toString();
+        return stringBuilder.append("]").toString();
     }
 }

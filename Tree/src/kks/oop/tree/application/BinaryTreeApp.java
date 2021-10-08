@@ -12,7 +12,7 @@ public class BinaryTreeApp {
         System.out.println("Binary tree with root = 39 created: " + binaryTree);
         System.out.println("Add array (data of node) in tree: ");
 
-        int[] array = new int[]{7, 12, 45, 17, 135, 84, 3, 65, 48};
+        int[] array = {7, 12, 45, 17, 135, 84, 3, 65, 48};
 
         System.out.println("Array: " + Arrays.toString(Arrays.stream(array).toArray()));
 
