@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="small fix for Vector">
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="rewrite List ( MyLinkedList ), same fix for ListApp">
+      <change afterPath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/application/HashTableApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/List/src/kks/oop/list/ListItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/kks/oop/list/ListItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/List/src/kks/oop/list/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/kks/oop/list/MyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/List/src/kks/oop/list/application/ListApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/kks/oop/list/application/ListApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,13 +69,13 @@
       <recent name="shapes" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ListApp">
-    <configuration name="ArraylistHomeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kks.oop.array_list_home.application.ArraylistHomeApp" />
-      <module name="ArrayListHome" />
+  <component name="RunManager" selected="Application.HashTableApp">
+    <configuration name="BinaryTreeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kks.oop.tree.application.BinaryTreeApp" />
+      <module name="Tree" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="kks.oop.array_list_home.application.*" />
+          <option name="PATTERN" value="kks.oop.tree.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,12 +83,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinaryTreeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kks.oop.tree.application.BinaryTreeApp" />
-      <module name="Tree" />
+    <configuration name="HashTableApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kks.oop.hashtable.application.HashTableApp" />
+      <module name="HashTable" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="kks.oop.tree.application.*" />
+          <option name="PATTERN" value="kks.oop.hashtable.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -138,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HashTableApp" />
         <item itemvalue="Application.ListApp" />
         <item itemvalue="Application.BinaryTreeApp" />
         <item itemvalue="Application.ShapeApplication" />
         <item itemvalue="Application.VectorApp" />
-        <item itemvalue="Application.ArraylistHomeApp" />
       </list>
     </recent_temporary>
   </component>
@@ -456,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633714483314</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="rewrite List ( MyLinkedList ), same fix for ListApp">
+      <created>1633720349442</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1633720349442</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -504,7 +510,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Range task. Merge complete" />
     <MESSAGE value="Range task. Complete" />
     <MESSAGE value="Shapes. Figure complete 80%" />
     <MESSAGE value="Rework Range task" />
@@ -529,17 +534,7 @@
     <MESSAGE value="fix for ArrayListHome" />
     <MESSAGE value="fix for Tree" />
     <MESSAGE value="small fix for Vector" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fix for Vector" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/List/src/kks/oop/list/application/ListApp.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="rewrite List ( MyLinkedList ), same fix for ListApp" />
+    <option name="LAST_COMMIT_MESSAGE" value="rewrite List ( MyLinkedList ), same fix for ListApp" />
   </component>
 </project>
