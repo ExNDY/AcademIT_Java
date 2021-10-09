@@ -10,7 +10,7 @@ public class MyHashTable<T> implements Collection<T> {
     private int size;
     private int modCount;
 
-    public MyHashTable(){
+    public MyHashTable() {
         //noinspection unchecked
         table = (LinkedList<T>[]) new LinkedList[DEFAULT_CAPACITY];
     }
@@ -197,7 +197,7 @@ public class MyHashTable<T> implements Collection<T> {
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder("hash | items(" + size + ")");
+        StringBuilder stringBuilder = new StringBuilder("HASH | ITEMS (" + size + ")");
 
         stringBuilder.append(System.lineSeparator());
 

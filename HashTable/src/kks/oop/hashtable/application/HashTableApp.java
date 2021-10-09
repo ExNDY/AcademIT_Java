@@ -33,7 +33,7 @@ public class HashTableApp {
 
         System.out.println("HashTable toArray(E[] array)");
 
-        for (String string: array){
+        for (String string : array) {
             System.out.println(string);
         }
 
@@ -69,12 +69,12 @@ public class HashTableApp {
 
         System.out.println("Iterator:");
 
-        for (String item: hashTable){
+        for (String item : hashTable) {
             System.out.println(item);
         }
     }
 
-    private static void printHashTable(MyHashTable<String> table){
+    private static void printHashTable(MyHashTable<String> table) {
         System.out.println("___________________");
         System.out.println(table);
         System.out.println("-------------------");

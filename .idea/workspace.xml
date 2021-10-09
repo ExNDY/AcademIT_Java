@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="rewrite List ( MyLinkedList ), same fix for ListApp">
-      <change afterPath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/application/HashTableApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="add HashTable">
       <change beforePath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -462,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633720349442</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="add HashTable">
+      <created>1633769903421</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1633769903421</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -510,7 +515,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Range task. Complete" />
     <MESSAGE value="Shapes. Figure complete 80%" />
     <MESSAGE value="Rework Range task" />
     <MESSAGE value="Rework Range task. Change getDifferencem getUnion, getIntersection. Rewrite RangeApplication.java" />
@@ -535,6 +539,7 @@
     <MESSAGE value="fix for Tree" />
     <MESSAGE value="small fix for Vector" />
     <MESSAGE value="rewrite List ( MyLinkedList ), same fix for ListApp" />
-    <option name="LAST_COMMIT_MESSAGE" value="rewrite List ( MyLinkedList ), same fix for ListApp" />
+    <MESSAGE value="add HashTable" />
+    <option name="LAST_COMMIT_MESSAGE" value="add HashTable" />
   </component>
 </project>
