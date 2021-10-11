@@ -7,7 +7,7 @@ public class ArrayList<T> implements List<T> {
 
     private T[] items;
     private int size;
-    private int modCount = 0;
+    private int modCount;
 
     /***
      * Constructor for empty ArrayList with current capacity
@@ -17,6 +17,7 @@ public class ArrayList<T> implements List<T> {
         if (capacity < 0) {
             throw new IllegalArgumentException("Capacity = " + capacity + ", must be >= 0");
         }
+
         //noinspection unchecked
         items = (T[]) new Object[capacity];
     }
@@ -77,13 +78,8 @@ public class ArrayList<T> implements List<T> {
         return Arrays.copyOf(items, size);
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
     public <E> E[] toArray(E[] a) {
-        if (a == null) {
-            throw new NullPointerException("Array is NULL");
-        }
-
         if (a.length < size) {
             //noinspection unchecked
             return (E[]) Arrays.copyOf(items, size, a.getClass());
@@ -123,13 +119,8 @@ public class ArrayList<T> implements List<T> {
         return false;
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
     public boolean containsAll(Collection<?> c) {
-        if (c == null) {
-            throw new IllegalArgumentException("Collection shouldn't be NULL");
-        }
-
         for (Object o : c) {
             if (!contains(o)) {
                 return false;
@@ -139,20 +130,18 @@ public class ArrayList<T> implements List<T> {
         return true;
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
     public boolean addAll(Collection<? extends T> c) {
+        if (c.isEmpty()) {
+            return false;
+        }
+
         return addAll(size, c);
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
     public boolean addAll(int index, Collection<? extends T> c) {
         checkIndex(index, true);
-
-        if (c == null) {
-            throw new IllegalArgumentException("Collection shouldn't be NULL");
-        }
 
         if (c.isEmpty()) {
             return false;
@@ -175,13 +164,8 @@ public class ArrayList<T> implements List<T> {
         return true;
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
     public boolean removeAll(Collection<?> c) {
-        if (c == null) {
-            throw new NullPointerException("Collection shouldn't be NULL");
-        }
-
         if (c.isEmpty()) {
             return false;
         }
@@ -197,11 +181,10 @@ public class ArrayList<T> implements List<T> {
         return size != oldSize;
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
     public boolean retainAll(Collection<?> c) {
-        if (c == null) {
-            throw new NullPointerException("Collection shouldn't be NULL");
+        if (c.isEmpty()) {
+            return false;
         }
 
         int oldSize = size;
@@ -248,11 +231,11 @@ public class ArrayList<T> implements List<T> {
 
     @Override
     public void add(int index, T item) {
+        checkIndex(index, true);
+
         if (size >= items.length) {
             increaseCapacity();
         }
-
-        checkIndex(index, true);
 
         if (index < size) {
             System.arraycopy(items, index, items, index + 1, size - index);
@@ -269,6 +252,7 @@ public class ArrayList<T> implements List<T> {
         checkIndex(index, false);
 
         T removedItem = items[index];
+
         System.arraycopy(items, index + 1, items, index, size - (index + 1));
 
         items[size - 1] = null;
@@ -324,10 +308,10 @@ public class ArrayList<T> implements List<T> {
      * @param isUpperBoundsIncluded include in check upper bounds of array (include array.length() or not)
      */
     private void checkIndex(int index, boolean isUpperBoundsIncluded) {
-        int upperBound = isUpperBoundsIncluded ? size : size + 1;
+        int maxIndex = isUpperBoundsIncluded ? size + 1 : size;
 
-        if (index < 0 || index >= upperBound) {
-            throw new IndexOutOfBoundsException("Index \"" + index + "\" out of bounds 0.." + (upperBound - 1) + ".");
+        if (index < 0 || index >= maxIndex) {
+            throw new IndexOutOfBoundsException("Index \"" + index + "\" out of bounds 0.." + (maxIndex - 1) + ".");
         }
     }
 
@@ -344,11 +328,7 @@ public class ArrayList<T> implements List<T> {
     }
 
     private void increaseCapacity() {
-        int newCapacity = DEFAULT_CAPACITY;
-
-        if (modCount != 0) {
-            newCapacity = items.length * 2;
-        }
+        int newCapacity = modCount != 0 ? items.length * 2 : DEFAULT_CAPACITY;
 
         items = Arrays.copyOf(items, newCapacity);
     }

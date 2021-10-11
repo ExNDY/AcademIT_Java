@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="add HashTable">
-      <change beforePath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/Temperature.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/model/ScaleConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/model/TemperatureConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/model/scale/Celsius.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/model/scale/Fahrenheit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/model/scale/Kelvin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/model/scale/Scale.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/ui/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/ui/converter_frame/TemperatureConverterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/ui/converter_frame/TemperatureConverterView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/ui/converter_frame/TemperatureConverterViewImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/utils/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +75,27 @@
       <recent name="C:\Users\Endy\IdeaProjects\AcademIT_Java_latest\ArrayListHome" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="kks.oop.temperature.gui.ui" />
+      <recent name="kks.oop.temperature.gui" />
       <recent name="kks.oop.range" />
       <recent name="kks.oop" />
       <recent name="kcp.oop" />
-      <recent name="shapes" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HashTableApp">
+  <component name="RunManager" selected="Application.ArrayListApp">
+    <configuration name="ArrayListApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kks.oop.array_list.application.ArrayListApp" />
+      <module name="ArrayList" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kks.oop.array_list.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BinaryTreeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kks.oop.tree.application.BinaryTreeApp" />
       <module name="Tree" />
@@ -107,25 +135,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShapeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kks.oop.shapes.application.ShapeApplication" />
-      <module name="Shapes" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kks.oop.temperature.gui.ui.Main" />
+      <module name="Temperature" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="kks.oop.shapes.application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VectorApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kks.oop.vector.application.VectorApp" />
-      <module name="Vector" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="kks.oop.vector.application.*" />
+          <option name="PATTERN" value="kks.oop.temperature.gui.ui.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArrayListApp" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.HashTableApp" />
         <item itemvalue="Application.ListApp" />
         <item itemvalue="Application.BinaryTreeApp" />
-        <item itemvalue="Application.ShapeApplication" />
-        <item itemvalue="Application.VectorApp" />
       </list>
     </recent_temporary>
   </component>
@@ -467,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633769903421</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="add HashTable">
+      <created>1633770567626</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1633770567627</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -541,5 +563,31 @@
     <MESSAGE value="rewrite List ( MyLinkedList ), same fix for ListApp" />
     <MESSAGE value="add HashTable" />
     <option name="LAST_COMMIT_MESSAGE" value="add HashTable" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/application/HashTableApp.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java</url>
+          <line>310</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java</url>
+          <line>288</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
