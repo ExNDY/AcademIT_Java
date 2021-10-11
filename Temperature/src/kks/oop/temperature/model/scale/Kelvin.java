@@ -1,4 +1,4 @@
-package kks.oop.temperature.gui.model.scale;
+package kks.oop.temperature.model.scale;
 
 public class Kelvin implements Scale {
     @Override

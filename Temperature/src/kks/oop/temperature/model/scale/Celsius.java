@@ -1,6 +1,6 @@
-package kks.oop.temperature.gui.model.scale;
+package kks.oop.temperature.model.scale;
 
-import static kks.oop.temperature.gui.utils.Constants.ABSOLUTE_ZERO_CELSIUS;
+import static kks.oop.temperature.utils.Constants.ABSOLUTE_ZERO_CELSIUS;
 
 public class Celsius implements Scale {
     @Override

@@ -1,16 +1,16 @@
-package kks.oop.temperature.gui.ui.converter_frame;
+package kks.oop.temperature.ui.converter;
 
-import kks.oop.temperature.gui.model.scale.Scale;
+import kks.oop.temperature.model.scale.Scale;
+import kks.oop.temperature.utils.TextUtil;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.event.ActionListener;
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
+import java.text.ParseException;
 
-import static kks.oop.temperature.gui.utils.Constants.getScales;
+import static kks.oop.temperature.utils.Constants.getScales;
 
-public class TemperatureConverterViewImpl implements TemperatureConverterView {
+public class ConverterViewImpl implements ConverterView {
     private JFrame frame;
     private JPanel panel;
     private JLabel label;
@@ -18,11 +18,10 @@ public class TemperatureConverterViewImpl implements TemperatureConverterView {
     private JTextField outputTextField;
     private JButton swapButton;
     private JButton convertButton;
-
     private JComboBox<Scale> scaleFromComboBox;
     private JComboBox<Scale> scaleToComboBox;
 
-    public TemperatureConverterViewImpl() {
+    public ConverterViewImpl() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {
@@ -63,34 +62,42 @@ public class TemperatureConverterViewImpl implements TemperatureConverterView {
 
     private void initScaleFromComboBox() {
         scaleFromComboBox = new JComboBox<>(getScales);
-        scaleFromComboBox.setBorder(BorderFactory.createTitledBorder(BorderFactory.createCompoundBorder(), "Input"));
+        scaleFromComboBox.setBorder(BorderFactory.createTitledBorder(BorderFactory.createCompoundBorder(), "Input:"));
         scaleFromComboBox.setSelectedIndex(0);
     }
 
     private void initScaleToComboBox() {
         scaleToComboBox = new JComboBox<>(getScales);
-        scaleToComboBox.setBorder(BorderFactory.createTitledBorder(BorderFactory.createCompoundBorder(), "Input"));
+        scaleToComboBox.setBorder(BorderFactory.createTitledBorder(BorderFactory.createCompoundBorder(), "Output:"));
         scaleToComboBox.setSelectedIndex(1);
     }
 
     private void initInputTextField() {
         inputTextField = new JTextField();
-        inputTextField.setText("");
+        inputTextField.setHorizontalAlignment(SwingConstants.CENTER);
+        inputTextField.setText("0.0");
     }
 
     private void initOutputTextField() {
         outputTextField = new JTextField();
         outputTextField.setEditable(false);
-        outputTextField.setText("");
+        outputTextField.setHorizontalAlignment(SwingConstants.CENTER);
+        outputTextField.setText("0.0");
     }
 
     private void initSwapButton() {
-        swapButton = new JButton("<->");
+        Icon swapIcon = new ImageIcon("Temperature/src/kks/oop/temperature/resource/ic_swap_24.png");
+
+        swapButton = new JButton("swap");
+        swapButton.setIcon(swapIcon);
         swapButton.addActionListener(e -> swapScales());
     }
 
     private void initConvertButton() {
+        Icon convertIcon = new ImageIcon("Temperature/src/kks/oop/temperature/resource/ic_arrow_down_24.png");
+
         convertButton = new JButton("Convert");
+        convertButton.setIcon(convertIcon);
     }
 
     private void initLayout() {
@@ -103,11 +110,11 @@ public class TemperatureConverterViewImpl implements TemperatureConverterView {
         groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.CENTER)
                 .addComponent(label)
                 .addGroup(groupLayout.createSequentialGroup()
-                        .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.CENTER)
+                        .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addComponent(scaleFromComboBox)
                                 .addComponent(swapButton)
                                 .addComponent(scaleToComboBox))
-                        .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.CENTER)
+                        .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addComponent(inputTextField)
                                 .addComponent(convertButton)
                                 .addComponent(outputTextField)))
@@ -116,27 +123,30 @@ public class TemperatureConverterViewImpl implements TemperatureConverterView {
         groupLayout.setVerticalGroup(groupLayout.createSequentialGroup()
                 .addComponent(label)
                 .addGroup(groupLayout.createSequentialGroup()
-                        .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.CENTER)
+                        .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addComponent(scaleFromComboBox)
                                 .addComponent(inputTextField))
-                        .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.CENTER)
+                        .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addComponent(swapButton)
                                 .addComponent(convertButton))
-                        .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.CENTER)
+                        .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addComponent(scaleToComboBox)
-
                                 .addComponent(outputTextField)))
         );
     }
 
     private void swapScales() {
-        if (getFrom() == getTo()) {
+        if (getScaleFrom() == getScaleTo()) {
             return;
         }
 
         int fromIndex = scaleFromComboBox.getSelectedIndex();
         scaleFromComboBox.setSelectedIndex(scaleToComboBox.getSelectedIndex());
         scaleToComboBox.setSelectedIndex(fromIndex);
+    }
+
+    private void showErrorMessage(String message) {
+        JOptionPane.showMessageDialog(frame, message, "ERROR: Wrong input format", JOptionPane.ERROR_MESSAGE);
     }
 
     @Override
@@ -149,19 +159,16 @@ public class TemperatureConverterViewImpl implements TemperatureConverterView {
             inputTextField.setText(String.valueOf(inputValue));
         } else {
             try {
-                inputValue = Double.parseDouble(input);
+                inputValue = TextUtil.parseDecimal(input);
                 inputTextField.setText(input);
-            } catch (NumberFormatException ex) {
+            } catch (NumberFormatException | ParseException ex) {
                 try {
-                    DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.getDefault());
-
-                    char correctSeparator = symbols.getDecimalSeparator();
-                    char incorrectSeparator = correctSeparator == ',' ? '.' : ',';
-
-                    inputValue = Double.parseDouble(input.replace(incorrectSeparator, correctSeparator));
+                    inputValue = Double.parseDouble(input.replaceAll(",", "."));
                     inputTextField.setText(String.valueOf(inputValue));
-                } catch (NumberFormatException ignored) {
+                } catch (NumberFormatException e) {
+                    outputTextField.setText("");
 
+                    showErrorMessage("Check the entered value.\n Error message: \n" + e);
                 }
             }
         }
@@ -170,17 +177,17 @@ public class TemperatureConverterViewImpl implements TemperatureConverterView {
     }
 
     @Override
-    public void setValue(double value) {
+    public void setResult(double value) {
         outputTextField.setText(String.valueOf(value));
     }
 
     @Override
-    public Scale getFrom() {
+    public Scale getScaleFrom() {
         return (Scale) scaleFromComboBox.getSelectedItem();
     }
 
     @Override
-    public Scale getTo() {
+    public Scale getScaleTo() {
         return (Scale) scaleToComboBox.getSelectedItem();
     }
 
