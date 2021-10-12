@@ -37,8 +37,8 @@ public class TemperatureController implements ActionListener {
     }
 
     private void convertTemperature() {
-        view.setResult(Math.round(
-                converter.convert(parseInputValue(), view.getScaleFrom(), view.getScaleTo()) * 100.0 / 100.0));
+        view.getOutputTextField().setText(String.valueOf(Math.round(
+                converter.convert(parseInputValue(), view.getScaleFrom(), view.getScaleTo()) * 100.0 / 100.0)));
     }
 
     private double parseInputValue() {

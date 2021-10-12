@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Temperature GUI, architect fix">
-      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/temperature_converter/TemperatureController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/resource/ic_arrow_down_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/assets/ic_arrow_down_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/resource/ic_swap_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/assets/ic_swap_24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/converter/ConverterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/converter/ConverterView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/converter/ConverterViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/temperature_converter/TemperatureView.java" afterDir="false" />
-    </list>
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Temperature GUI, architect fix, rewrite MVC" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,13 +154,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625003734943</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Lecture 0. GIT">
-      <created>1625004157870</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1625004157870</updated>
     </task>
     <task id="LOCAL-00002" summary="Range task. step1">
       <created>1628072878284</created>
@@ -507,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633989169685</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Temperature GUI, architect fix, rewrite MVC">
+      <created>1634032879108</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1634032879108</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -555,7 +546,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rework Range task. Change getDifferencem getUnion, getIntersection. Rewrite RangeApplication.java" />
     <MESSAGE value="Rework RangeApplication.java" />
     <MESSAGE value="Rewrite Range: getDifference, getUnion, getIntersection&#10;Rewrite ShapeApplication" />
     <MESSAGE value="Rewrite ShapeApplication, override hashcode,toString, equals for shapes" />
@@ -580,7 +570,8 @@
     <MESSAGE value="add HashTable" />
     <MESSAGE value="some parts of Temperature Converter, fix for ArrayList" />
     <MESSAGE value="Temperature GUI, architect fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Temperature GUI, architect fix" />
+    <MESSAGE value="Temperature GUI, architect fix, rewrite MVC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Temperature GUI, architect fix, rewrite MVC" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

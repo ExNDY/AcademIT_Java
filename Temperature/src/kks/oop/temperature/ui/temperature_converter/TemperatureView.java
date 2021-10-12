@@ -85,14 +85,14 @@ public class TemperatureView {
     }
 
     private void initSwapButton() {
-        Icon swapIcon = new ImageIcon("Temperature/src/kks/oop/temperature/resource/ic_swap_24.png");
+        Icon swapIcon = new ImageIcon("Temperature/src/kks/oop/temperature/assets/ic_swap_24.png");
 
         swapButton = new JButton("swap");
         swapButton.setIcon(swapIcon);
     }
 
     private void initConvertButton() {
-        Icon convertIcon = new ImageIcon("Temperature/src/kks/oop/temperature/resource/ic_arrow_down_24.png");
+        Icon convertIcon = new ImageIcon("Temperature/src/kks/oop/temperature/assets/ic_arrow_down_24.png");
 
         convertButton = new JButton("Convert");
         convertButton.setIcon(convertIcon);
@@ -131,10 +131,6 @@ public class TemperatureView {
                                 .addComponent(scaleToComboBox)
                                 .addComponent(outputTextField)))
         );
-    }
-
-    public void setResult(double value) {
-        outputTextField.setText(String.valueOf(value));
     }
 
     public Scale getScaleFrom() {
