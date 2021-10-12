@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="some parts of Temperature Converter, fix for ArrayList">
-      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/converter/TemperatureConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/resource/ic_arrow_down_24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/resource/ic_swap_24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/utils/TextUtil.java" afterDir="false" />
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Temperature GUI, architect fix">
+      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/temperature_converter/TemperatureController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/model/ScaleConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/model/TemperatureConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/model/scale/Celsius.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/model/scale/Celsius.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/model/scale/Fahrenheit.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/model/scale/Fahrenheit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/model/scale/Kelvin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/model/scale/Kelvin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/model/scale/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/model/scale/Scale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/ui/converter_frame/TemperatureConverterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/converter/ConverterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/ui/converter_frame/TemperatureConverterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/converter/ConverterView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/ui/converter_frame/TemperatureConverterViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/converter/ConverterViewImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/gui/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/utils/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/resource/ic_arrow_down_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/assets/ic_arrow_down_24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/resource/ic_swap_24.png" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/assets/ic_swap_24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/converter/ConverterController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/converter/ConverterView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/converter/ConverterViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/temperature_converter/TemperatureView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -501,7 +493,21 @@
       <option name="project" value="LOCAL" />
       <updated>1633962865688</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Temperature GUI, architect fix">
+      <created>1633989159094</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1633989159094</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Temperature GUI, architect fix">
+      <created>1633989169685</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1633989169685</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -549,7 +555,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rework Range task" />
     <MESSAGE value="Rework Range task. Change getDifferencem getUnion, getIntersection. Rewrite RangeApplication.java" />
     <MESSAGE value="Rework RangeApplication.java" />
     <MESSAGE value="Rewrite Range: getDifference, getUnion, getIntersection&#10;Rewrite ShapeApplication" />
@@ -574,7 +579,8 @@
     <MESSAGE value="rewrite List ( MyLinkedList ), same fix for ListApp" />
     <MESSAGE value="add HashTable" />
     <MESSAGE value="some parts of Temperature Converter, fix for ArrayList" />
-    <option name="LAST_COMMIT_MESSAGE" value="some parts of Temperature Converter, fix for ArrayList" />
+    <MESSAGE value="Temperature GUI, architect fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Temperature GUI, architect fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

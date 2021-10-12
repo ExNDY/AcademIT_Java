@@ -1,16 +1,11 @@
-package kks.oop.temperature.ui.converter;
+package kks.oop.temperature.ui.temperature_converter;
 
 import kks.oop.temperature.model.scale.Scale;
-import kks.oop.temperature.utils.TextUtil;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
-import java.awt.event.ActionListener;
-import java.text.ParseException;
 
-import static kks.oop.temperature.utils.Constants.getScales;
-
-public class ConverterViewImpl implements ConverterView {
+public class TemperatureView {
     private JFrame frame;
     private JPanel panel;
     private JLabel label;
@@ -21,18 +16,22 @@ public class ConverterViewImpl implements ConverterView {
     private JComboBox<Scale> scaleFromComboBox;
     private JComboBox<Scale> scaleToComboBox;
 
-    public ConverterViewImpl() {
+    public TemperatureView(String title, Scale[] scalesArray) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {
 
         }
 
-        initFrame();
+        initComponents(title, scalesArray);
+    }
+
+    private void initComponents(String title, Scale[] scalesArray) {
+        initFrame(title);
         initPanel();
         initLabel();
-        initScaleFromComboBox();
-        initScaleToComboBox();
+        initScaleFromComboBox(scalesArray);
+        initScaleToComboBox(scalesArray);
         initInputTextField();
         initOutputTextField();
         initSwapButton();
@@ -43,8 +42,8 @@ public class ConverterViewImpl implements ConverterView {
         frame.setVisible(true);
     }
 
-    private void initFrame() {
-        frame = new JFrame("Temperature converter");
+    private void initFrame(String title) {
+        frame = new JFrame(title);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -60,14 +59,14 @@ public class ConverterViewImpl implements ConverterView {
         label = new JLabel("Choose scales for convertation:");
     }
 
-    private void initScaleFromComboBox() {
-        scaleFromComboBox = new JComboBox<>(getScales);
+    private void initScaleFromComboBox(Scale[] scalesArray) {
+        scaleFromComboBox = new JComboBox<>(scalesArray);
         scaleFromComboBox.setBorder(BorderFactory.createTitledBorder(BorderFactory.createCompoundBorder(), "Input:"));
         scaleFromComboBox.setSelectedIndex(0);
     }
 
-    private void initScaleToComboBox() {
-        scaleToComboBox = new JComboBox<>(getScales);
+    private void initScaleToComboBox(Scale[] scalesArray) {
+        scaleToComboBox = new JComboBox<>(scalesArray);
         scaleToComboBox.setBorder(BorderFactory.createTitledBorder(BorderFactory.createCompoundBorder(), "Output:"));
         scaleToComboBox.setSelectedIndex(1);
     }
@@ -90,7 +89,6 @@ public class ConverterViewImpl implements ConverterView {
 
         swapButton = new JButton("swap");
         swapButton.setIcon(swapIcon);
-        swapButton.addActionListener(e -> swapScales());
     }
 
     private void initConvertButton() {
@@ -135,64 +133,87 @@ public class ConverterViewImpl implements ConverterView {
         );
     }
 
-    private void swapScales() {
-        if (getScaleFrom() == getScaleTo()) {
-            return;
-        }
-
-        int fromIndex = scaleFromComboBox.getSelectedIndex();
-        scaleFromComboBox.setSelectedIndex(scaleToComboBox.getSelectedIndex());
-        scaleToComboBox.setSelectedIndex(fromIndex);
-    }
-
-    private void showErrorMessage(String message) {
-        JOptionPane.showMessageDialog(frame, message, "ERROR: Wrong input format", JOptionPane.ERROR_MESSAGE);
-    }
-
-    @Override
-    public double getTemperature() {
-        String input = inputTextField.getText().trim();
-
-        double inputValue = 0.0;
-
-        if (input.equals("")) {
-            inputTextField.setText(String.valueOf(inputValue));
-        } else {
-            try {
-                inputValue = TextUtil.parseDecimal(input);
-                inputTextField.setText(input);
-            } catch (NumberFormatException | ParseException ex) {
-                try {
-                    inputValue = Double.parseDouble(input.replaceAll(",", "."));
-                    inputTextField.setText(String.valueOf(inputValue));
-                } catch (NumberFormatException e) {
-                    outputTextField.setText("");
-
-                    showErrorMessage("Check the entered value.\n Error message: \n" + e);
-                }
-            }
-        }
-
-        return inputValue;
-    }
-
-    @Override
     public void setResult(double value) {
         outputTextField.setText(String.valueOf(value));
     }
 
-    @Override
     public Scale getScaleFrom() {
         return (Scale) scaleFromComboBox.getSelectedItem();
     }
 
-    @Override
     public Scale getScaleTo() {
         return (Scale) scaleToComboBox.getSelectedItem();
     }
 
-    @Override
-    public void addListener(ActionListener listener) {
-        convertButton.addActionListener(listener);
+    public JFrame getFrame() {
+        return frame;
+    }
+
+    public void setFrame(JFrame frame) {
+        this.frame = frame;
+    }
+
+    public JPanel getPanel() {
+        return panel;
+    }
+
+    public void setPanel(JPanel panel) {
+        this.panel = panel;
+    }
+
+    public JLabel getLabel() {
+        return label;
+    }
+
+    public void setLabel(JLabel label) {
+        this.label = label;
+    }
+
+    public JTextField getInputTextField() {
+        return inputTextField;
+    }
+
+    public void setInputTextField(JTextField inputTextField) {
+        this.inputTextField = inputTextField;
+    }
+
+    public JTextField getOutputTextField() {
+        return outputTextField;
+    }
+
+    public void setOutputTextField(JTextField outputTextField) {
+        this.outputTextField = outputTextField;
+    }
+
+    public JButton getSwapButton() {
+        return swapButton;
+    }
+
+    public void setSwapButton(JButton swapButton) {
+        this.swapButton = swapButton;
+    }
+
+    public JButton getConvertButton() {
+        return convertButton;
+    }
+
+    public void setConvertButton(JButton convertButton) {
+        this.convertButton = convertButton;
+    }
+
+    public JComboBox<Scale> getScaleFromComboBox() {
+        return scaleFromComboBox;
+    }
+
+    public void setScaleFromComboBox(JComboBox<Scale> scaleFromComboBox) {
+        this.scaleFromComboBox = scaleFromComboBox;
+    }
+
+    public JComboBox<Scale> getScaleToComboBox() {
+        return scaleToComboBox;
+    }
+
+    public void setScaleToComboBox(JComboBox<Scale> scaleToComboBox) {
+        this.scaleToComboBox = scaleToComboBox;
     }
 }
