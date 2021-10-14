@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="Temperature GUI, architect fix, rewrite MVC" />
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="small fix for TemperatureController">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/application/ShapeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/application/ShapeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Temperature/kks/oop/temperature/resource/ic_arrow_down_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Temperature/kks/oop/temperature/resource/ic_swap_24.png" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +79,7 @@
       <recent name="kcp.oop" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.ShapeApplication">
     <configuration name="ArrayListApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kks.oop.array_list.application.ArrayListApp" />
       <module name="ArrayList" />
@@ -90,19 +99,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="kks.oop.hashtable.application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ListApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kks.oop.list.application.ListApp" />
-      <module name="List" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="kks.oop.list.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,13 +132,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShapeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kks.oop.shapes.application.ShapeApplication" />
+      <module name="Shapes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kks.oop.shapes.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ShapeApplication" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ArrayListApp" />
         <item itemvalue="Application.HashTableApp" />
-        <item itemvalue="Application.ListApp" />
       </list>
     </recent_temporary>
   </component>
@@ -154,13 +163,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625003734943</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Range task. step1">
-      <created>1628072878284</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1628072878284</updated>
     </task>
     <task id="LOCAL-00003" summary="Range task. Intersection complete">
       <created>1628590289807</created>
@@ -498,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634032879108</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="small fix for TemperatureController">
+      <created>1634033417992</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1634033417993</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -546,7 +555,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rework RangeApplication.java" />
     <MESSAGE value="Rewrite Range: getDifference, getUnion, getIntersection&#10;Rewrite ShapeApplication" />
     <MESSAGE value="Rewrite ShapeApplication, override hashcode,toString, equals for shapes" />
     <MESSAGE value="Add module ArrayList with ArrayList.java (Custom realisation of ArrayList)" />
@@ -571,7 +579,8 @@
     <MESSAGE value="some parts of Temperature Converter, fix for ArrayList" />
     <MESSAGE value="Temperature GUI, architect fix" />
     <MESSAGE value="Temperature GUI, architect fix, rewrite MVC" />
-    <option name="LAST_COMMIT_MESSAGE" value="Temperature GUI, architect fix, rewrite MVC" />
+    <MESSAGE value="small fix for TemperatureController" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fix for TemperatureController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
