@@ -3,25 +3,26 @@ package kks.oop.hashtable;
 import java.util.*;
 
 public class MyHashTable<T> implements Collection<T> {
-    private final int DEFAULT_CAPACITY = 10;
-    private final double DEFAULT_LOAD_FACTOR = 0.65;
+    private static final int DEFAULT_CAPACITY_SIZE = 10;
+    private static final int MINIMUM_CAPACITY_SIZE = 1;
+    private static final double MAXIMUM_LOAD_FACTOR = 0.65;
 
-    private LinkedList<T>[] table;
+    private LinkedList<T>[] lists;
     private int size;
     private int modCount;
 
     public MyHashTable() {
         //noinspection unchecked
-        table = (LinkedList<T>[]) new LinkedList[DEFAULT_CAPACITY];
+        lists = (LinkedList<T>[]) new LinkedList[DEFAULT_CAPACITY_SIZE];
     }
 
     public MyHashTable(int capacity) {
         if (capacity <= 0) {
-            throw new IllegalArgumentException("Size of table should be more 0");
+            throw new IllegalArgumentException("Wrong capacity size: " + capacity + ", shouldn't be less " + MINIMUM_CAPACITY_SIZE);
         }
 
         //noinspection unchecked
-        table = (LinkedList<T>[]) new LinkedList[capacity];
+        lists = (LinkedList<T>[]) new LinkedList[capacity];
     }
 
     @Override
@@ -36,13 +37,9 @@ public class MyHashTable<T> implements Collection<T> {
 
     @Override
     public boolean contains(Object o) {
-        int index = getHash(o);
+        int index = getIndex(o);
 
-        if (table[index] == null) {
-            return false;
-        }
-
-        return table[index].contains(o);
+        return lists[index] != null && lists[index].contains(o);
     }
 
     @Override
@@ -83,19 +80,19 @@ public class MyHashTable<T> implements Collection<T> {
 
     @Override
     public boolean add(T item) {
-        int hash = getHash(item);
+        int index = getIndex(item);
 
-        if (table[hash] == null) {
-            table[hash] = new LinkedList<>();
+        if (lists[index] == null) {
+            lists[index] = new LinkedList<>();
         }
 
-        table[hash].add(item);
+        lists[index].add(item);
         size++;
         modCount++;
 
         checkAndIncreaseCapacity();
 
-        return false;
+        return true;
     }
 
     @Override
@@ -104,20 +101,16 @@ public class MyHashTable<T> implements Collection<T> {
             return false;
         }
 
-        int hash = getHash(o);
+        int index = getIndex(o);
 
-        if (table[hash] == null) {
+        if (lists[index] == null) {
             return false;
         }
 
-        if (table[hash].remove(o)) {
-            size--;
-            modCount++;
+        size--;
+        modCount++;
 
-            return true;
-        }
-
-        return false;
+        return lists[index].remove(o);
     }
 
     @Override
@@ -150,46 +143,42 @@ public class MyHashTable<T> implements Collection<T> {
             return false;
         }
 
-        int initialSize = size;
+        boolean wasChanged = false;
 
         for (Object o : c) {
-            remove(o);
+            while (remove(o)) {
+                wasChanged = true;
+            }
         }
 
-        return initialSize != size;
+        return wasChanged;
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
     public boolean retainAll(Collection<?> c) {
-        int initialSize = size;
-
-        for (LinkedList<T> item : table) {
-            if (item == null || item.size() == 0) {
-                continue;
-            }
-
-            int itemInitialSize = item.size();
-
-            if (item.retainAll(c)) {
-                size += item.size() - itemInitialSize;
-            }
-
-        }
-
-        if (size == initialSize) {
+        if (c.isEmpty()) {
             return false;
         }
 
-        modCount++;
+        boolean wasChanged = false;
 
-        return true;
+        for (LinkedList<T> list : lists) {
+            if (list != null && list.retainAll(c)) {
+                wasChanged = true;
+            }
+        }
+
+        if (wasChanged) {
+            modCount++;
+        }
+
+        return wasChanged;
     }
 
     @Override
     public void clear() {
         if (size != 0) {
-            Arrays.fill(table, null);
+            Arrays.fill(lists, null);
             modCount++;
             size = 0;
         }
@@ -197,58 +186,56 @@ public class MyHashTable<T> implements Collection<T> {
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder("HASH | ITEMS (" + size + ")");
+        StringBuilder stringBuilder = new StringBuilder("[HASH | [ITEMS]]: ");
 
-        stringBuilder.append(System.lineSeparator());
-
-        for (int i = 0; i < table.length; i++) {
-            if (table[i] != null && table[i].size() > 0) {
-                stringBuilder.append(String.format("%4d | ", i))
-                        .append(table[i])
-                        .append(System.lineSeparator());
+        for (int i = 0; i < lists.length; i++) {
+            if (lists[i] != null && lists[i].size() > 0) {
+                stringBuilder.append("[ ")
+                        .append(String.format("%4d | ", i))
+                        .append(lists[i])
+                        .append("], ");
             }
         }
 
-        stringBuilder.append(String.format("Capacity: %d%n", table.length))
-                .append(String.format("Size: %d", size));
+        stringBuilder.delete(stringBuilder.length() - 2, stringBuilder.length());
 
         return stringBuilder.toString();
     }
 
-    private int getHash(Object o) {
-        return getHash(o, table.length);
+    private int getIndex(Object o) {
+        return getIndex(o, lists.length);
     }
 
-    private int getHash(Object o, int tableLength) {
+    private static int getIndex(Object o, int tableLength) {
         return (o == null) ? 0 : Math.abs(o.hashCode() % tableLength);
     }
 
     private void checkAndIncreaseCapacity() {
-        if ((double) size / table.length > DEFAULT_LOAD_FACTOR) {
-            int newCapacity = table.length * 2;
+        if ((double) size / lists.length > MAXIMUM_LOAD_FACTOR) {
+            int newCapacity = lists.length * 2;
 
             //noinspection unchecked
             LinkedList<T>[] newTable = (LinkedList<T>[]) new LinkedList[newCapacity];
 
             for (T item : this) {
-                int hash = getHash(item, newCapacity);
+                int index = getIndex(item, newCapacity);
 
-                if (newTable[hash] == null) {
-                    newTable[hash] = new LinkedList<>();
+                if (newTable[index] == null) {
+                    newTable[index] = new LinkedList<>();
                 }
 
-                newTable[hash].add(item);
+                newTable[index].add(item);
             }
 
-            table = newTable;
+            lists = newTable;
         }
     }
 
     private class MyHashTableIterator implements Iterator<T> {
-        private final int oldModCount = modCount;
-        private int index = -1;
-        private int viewedItemsCount = 0;
-        private Iterator<T> iterator;
+        private final int initialModCount = modCount;
+        private int arrayIndex = -1;
+        private int viewedItemsCount;
+        private Iterator<T> listIterator;
 
         @Override
         public boolean hasNext() {
@@ -257,7 +244,7 @@ public class MyHashTable<T> implements Collection<T> {
 
         @Override
         public T next() {
-            if (oldModCount != modCount) {
+            if (initialModCount != modCount) {
                 throw new ConcurrentModificationException("Table was changed");
             }
 
@@ -265,12 +252,12 @@ public class MyHashTable<T> implements Collection<T> {
                 throw new NoSuchElementException("Table contains no more elements");
             }
 
-            if (index == -1 || !iterator.hasNext()) {
-                while (index < table.length) {
-                    index++;
+            if (arrayIndex == -1 || !listIterator.hasNext()) {
+                while (arrayIndex < lists.length) {
+                    arrayIndex++;
 
-                    if (table[index] != null && table[index].size() != 0) {
-                        iterator = table[index].iterator();
+                    if (lists[arrayIndex] != null && lists[arrayIndex].size() != 0) {
+                        listIterator = lists[arrayIndex].iterator();
                         break;
                     }
                 }
@@ -278,7 +265,7 @@ public class MyHashTable<T> implements Collection<T> {
 
             viewedItemsCount++;
 
-            return iterator.next();
+            return listIterator.next();
         }
     }
 }

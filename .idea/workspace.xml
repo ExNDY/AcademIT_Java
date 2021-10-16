@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for Tree Module">
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for List">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/List/src/kks/oop/list/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/kks/oop/list/MyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/List/src/kks/oop/list/application/ListApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/kks/oop/list/application/ListApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/application/HashTableApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/application/HashTableApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,13 +74,26 @@
       <recent name="kcp.oop" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ListApp">
+  <component name="RunManager" selected="Application.HashTableApp">
     <configuration name="BinaryTreeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kks.oop.tree.application.BinaryTreeApp" />
       <module name="Tree" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="kks.oop.tree.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashTableApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kks.oop.hashtable.application.HashTableApp" />
+      <module name="HashTable" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kks.oop.hashtable.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,19 +127,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kks.oop.temperature.gui.ui.Main" />
-      <module name="Temperature" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="kks.oop.temperature.gui.ui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ShapeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kks.oop.shapes.application.ShapeApplication" />
       <module name="Shapes" />
@@ -142,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HashTableApp" />
         <item itemvalue="Application.ListApp" />
         <item itemvalue="Application.BinaryTreeApp" />
         <item itemvalue="Application.ShapeApplication" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -158,13 +158,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625003734943</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Range task. Complete">
-      <created>1628594291204</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1628594291204</updated>
     </task>
     <task id="LOCAL-00006" summary="Shapes. Figure complete 80%">
       <created>1628596643019</created>
@@ -502,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634369698611</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="fix for List">
+      <created>1634411479380</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1634411479381</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -550,7 +550,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rewrite ShapeApplication, override hashcode,toString, equals for shapes" />
     <MESSAGE value="Add module ArrayList with ArrayList.java (Custom realisation of ArrayList)" />
     <MESSAGE value="Added ArrayListApp.java" />
     <MESSAGE value="Added module Vector" />
@@ -575,7 +574,8 @@
     <MESSAGE value="small fix for TemperatureController" />
     <MESSAGE value="fix for Shapes" />
     <MESSAGE value="fix for Tree Module" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix for Tree Module" />
+    <MESSAGE value="fix for List" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix for List" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -584,11 +584,6 @@
           <url>file://$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/application/HashTableApp.java</url>
           <line>19</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
