@@ -23,7 +23,7 @@ public class Tree<T> {
 
     public Tree(Comparator<? super T> comparator, T rootValue) {
         this.comparator = comparator;
-        this.root = new Node<>(rootValue);
+        root = new Node<>(rootValue);
         size++;
     }
 
@@ -109,10 +109,6 @@ public class Tree<T> {
     }
 
     public boolean remove(T value) {
-        if (value == null) {
-            throw new NullPointerException("Node shouldn't be NULL");
-        }
-
         if (root == null) {
             return false;
         }
@@ -247,21 +243,23 @@ public class Tree<T> {
             return;
         }
 
-        Deque<Node<T>> deque = new ArrayDeque<>(size);
+        Deque<Node<T>> deque = new LinkedList<>();
 
-        deque.addFirst(root);
+        Node<T> node = root;
+
+        deque.addFirst(node);
 
         while (!deque.isEmpty()) {
-            Node<T> node = deque.removeFirst();
+            node = deque.removeFirst();
 
             consumer.accept(node.getValue());
 
-            if (node.getLeftChild() != null) {
-                deque.addFirst(node.getLeftChild());
-            }
-
             if (node.getRightChild() != null) {
                 deque.addFirst(node.getRightChild());
+            }
+
+            if (node.getLeftChild() != null) {
+                deque.addFirst(node.getLeftChild());
             }
         }
     }
@@ -305,7 +303,7 @@ public class Tree<T> {
     @Override
     public String toString() {
         if (root == null) {
-            return "Tree is empty";
+            return "[]";
         }
 
         Deque<Node<T>> deque = new LinkedList<>();

@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="small fix for TemperatureController">
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for Shapes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/application/ShapeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shapes/src/kks/oop/shapes/application/ShapeApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Temperature/kks/oop/temperature/resource/ic_arrow_down_24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Temperature/kks/oop/temperature/resource/ic_swap_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Tree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +73,7 @@
       <recent name="kcp.oop" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ShapeApplication">
+  <component name="RunManager" selected="Application.BinaryTreeApp">
     <configuration name="ArrayListApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kks.oop.array_list.application.ArrayListApp" />
       <module name="ArrayList" />
@@ -93,12 +87,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HashTableApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kks.oop.hashtable.application.HashTableApp" />
-      <module name="HashTable" />
+    <configuration name="BinaryTreeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kks.oop.tree.application.BinaryTreeApp" />
+      <module name="Tree" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="kks.oop.hashtable.application.*" />
+          <option name="PATTERN" value="kks.oop.tree.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BinaryTreeApp" />
         <item itemvalue="Application.ShapeApplication" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ArrayListApp" />
-        <item itemvalue="Application.HashTableApp" />
       </list>
     </recent_temporary>
   </component>
@@ -163,13 +157,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625003734943</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Range task. Intersection complete">
-      <created>1628590289807</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1628590289807</updated>
     </task>
     <task id="LOCAL-00004" summary="Range task. Merge complete">
       <created>1628591243836</created>
@@ -507,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634033417993</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="fix for Shapes">
+      <created>1634213130762</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1634213130763</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -570,7 +564,6 @@
     <MESSAGE value="some fix for Lambda module" />
     <MESSAGE value="some fix for ArrayList module" />
     <MESSAGE value="little fix for LambdaApp" />
-    <MESSAGE value="fix for Shapes" />
     <MESSAGE value="fix for ArrayListHome" />
     <MESSAGE value="fix for Tree" />
     <MESSAGE value="small fix for Vector" />
@@ -580,7 +573,8 @@
     <MESSAGE value="Temperature GUI, architect fix" />
     <MESSAGE value="Temperature GUI, architect fix, rewrite MVC" />
     <MESSAGE value="small fix for TemperatureController" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fix for TemperatureController" />
+    <MESSAGE value="fix for Shapes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix for Shapes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
