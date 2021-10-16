@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for Shapes">
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for Tree Module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List/src/kks/oop/list/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/kks/oop/list/MyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List/src/kks/oop/list/application/ListApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/List/src/kks/oop/list/application/ListApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,13 +74,13 @@
       <recent name="kcp.oop" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BinaryTreeApp">
-    <configuration name="ArrayListApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kks.oop.array_list.application.ArrayListApp" />
-      <module name="ArrayList" />
+  <component name="RunManager" selected="Application.ListApp">
+    <configuration name="BinaryTreeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kks.oop.tree.application.BinaryTreeApp" />
+      <module name="Tree" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="kks.oop.array_list.application.*" />
+          <option name="PATTERN" value="kks.oop.tree.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,12 +88,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinaryTreeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kks.oop.tree.application.BinaryTreeApp" />
-      <module name="Tree" />
+    <configuration name="ListApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kks.oop.list.application.ListApp" />
+      <module name="List" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="kks.oop.tree.application.*" />
+          <option name="PATTERN" value="kks.oop.list.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ListApp" />
         <item itemvalue="Application.BinaryTreeApp" />
         <item itemvalue="Application.ShapeApplication" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.ArrayListApp" />
       </list>
     </recent_temporary>
   </component>
@@ -157,13 +158,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625003734943</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Range task. Merge complete">
-      <created>1628591243836</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1628591243836</updated>
     </task>
     <task id="LOCAL-00005" summary="Range task. Complete">
       <created>1628594291204</created>
@@ -501,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634213130763</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="fix for Tree Module">
+      <created>1634369698611</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1634369698611</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -549,7 +550,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rewrite Range: getDifference, getUnion, getIntersection&#10;Rewrite ShapeApplication" />
     <MESSAGE value="Rewrite ShapeApplication, override hashcode,toString, equals for shapes" />
     <MESSAGE value="Add module ArrayList with ArrayList.java (Custom realisation of ArrayList)" />
     <MESSAGE value="Added ArrayListApp.java" />
@@ -574,7 +574,8 @@
     <MESSAGE value="Temperature GUI, architect fix, rewrite MVC" />
     <MESSAGE value="small fix for TemperatureController" />
     <MESSAGE value="fix for Shapes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix for Shapes" />
+    <MESSAGE value="fix for Tree Module" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix for Tree Module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

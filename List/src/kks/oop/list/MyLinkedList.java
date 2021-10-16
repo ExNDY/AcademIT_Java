@@ -5,10 +5,10 @@ import java.util.Objects;
 
 public class MyLinkedList<T> {
     private ListItem<T> head;
-    private int size = 0;
+    private int size;
 
     public MyLinkedList(T data) {
-        this.head = new ListItem<>(data);
+        head = new ListItem<>(data);
         size++;
     }
 
@@ -59,10 +59,7 @@ public class MyLinkedList<T> {
     }
 
     public void addFirst(T data) {
-        ListItem<T> newItem = new ListItem<>(data);
-
-        newItem.setNext(head);
-        head = newItem;
+        head = new ListItem<>(data, head);
 
         size++;
     }
@@ -84,26 +81,18 @@ public class MyLinkedList<T> {
     }
 
     public void add(T data) {
-        if (head == null) {
-            addFirst(data);
-
-            return;
-        }
-
         addByIndex(size, data);
     }
 
     public T removeByIndex(int index) {
         checkIndex(index, false);
 
-        T removedData;
-
         if (index == 0) {
             return removeFirst();
         }
 
         ListItem<T> previousItem = getItemByIndex(index - 1);
-        removedData = previousItem.getNext().getData();
+        T removedData = previousItem.getNext().getData();
         previousItem.setNext(previousItem.getNext().getNext());
 
         size--;
@@ -194,15 +183,19 @@ public class MyLinkedList<T> {
     }
 
     private void checkIndex(int index, boolean isUpperBoundsIncluded) {
-        int upperBound = isUpperBoundsIncluded ? size + 1 : size;
+        int maxIndex = isUpperBoundsIncluded ? size : size - 1;
 
-        if (index < 0 || index >= upperBound) {
-            throw new IndexOutOfBoundsException("Index \"" + index + "\" out of bounds 0.." + (upperBound - 1) + ".");
+        if (index < 0 || index > maxIndex) {
+            throw new IndexOutOfBoundsException("Index \"" + index + "\" out of bounds 0.." + maxIndex + ".");
         }
     }
 
     @Override
     public String toString() {
+        if (size == 0) {
+            return "[]";
+        }
+
         StringBuilder sb = new StringBuilder("[");
 
         for (ListItem<T> item = head; item != null; item = item.getNext()) {

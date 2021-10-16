@@ -4,49 +4,49 @@ import kks.oop.list.MyLinkedList;
 
 public class ListApp {
     public static void main(String[] args) {
-        MyLinkedList<Integer> list = new MyLinkedList<>(5);
+        MyLinkedList<Integer> list1 = new MyLinkedList<>(5);
 
-        System.out.println("List created: " + list);
+        System.out.println("List created: " + list1);
 
-        list.addFirst(39);
+        list1.addFirst(39);
 
-        System.out.println("Add as first item 39: " + list);
+        System.out.println("Add as first item 39: " + list1);
 
-        list.addByIndex(1, 2);
+        list1.addByIndex(1, 2);
 
-        System.out.println("Add by index = 1, value = 2: " + list);
+        System.out.println("Add by index = 1, value = 2: " + list1);
         System.out.println("Add new item (add to the end of list) value = 65.");
 
-        list.add(65);
+        list1.add(65);
 
-        System.out.println("get index = 2: " + list.get(2));
-        System.out.println("set 12 index = 1: " + list.set(1, 12));
-        System.out.println(list + " has size " + list.size());
-        System.out.println("getFirstItem: " + list.getFirst());
-        System.out.println("remove item by index 1. status: " + list.removeByIndex(1) + " was delete");
-        System.out.println(list);
-        System.out.println("remove first item: " + list.removeFirst());
+        System.out.println("get index = 2: " + list1.get(2));
+        System.out.println("set 12 index = 1: " + list1.set(1, 12));
+        System.out.println(list1 + " has size " + list1.size());
+        System.out.println("getFirstItem: " + list1.getFirst());
+        System.out.println("remove item by index 1. status: " + list1.removeByIndex(1) + " was delete");
+        System.out.println(list1);
+        System.out.println("remove first item: " + list1.removeFirst());
 
-        list.addByIndex(0, 13);
+        list1.addByIndex(0, 13);
 
-        System.out.println(list);
-        System.out.println("remove item with value = 13. status: " + list.removeByData(13));
+        System.out.println(list1);
+        System.out.println("remove item with value = 13. status: " + list1.removeByData(13));
         System.out.println("Reflect list after add items");
-        System.out.println(list);
+        System.out.println(list1);
 
-        list.add(5);
-        list.add(15);
-        list.add(21);
-        list.add(7);
+        list1.add(5);
+        list1.add(15);
+        list1.add(21);
+        list1.add(7);
 
-        System.out.println(list + " before");
+        System.out.println(list1 + " before");
 
-        list.reverse();
+        list1.reverse();
 
-        System.out.println(list + " after");
+        System.out.println(list1 + " after");
 
-        MyLinkedList<Integer> secondList = list.copy();
+        MyLinkedList<Integer> list2 = list1.copy();
 
-        System.out.println("Second List after copy(): " + secondList);
+        System.out.println("Second List after copy(): " + list2);
     }
 }
