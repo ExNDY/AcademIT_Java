@@ -24,19 +24,22 @@ public class ArrayList<T> implements List<T> {
 
     /***
      * Constructor with list initialization
-     * @param list has data for new ArrayList
+     * @param c has data for new ArrayList
      */
-    public ArrayList(List<T> list) {
-        if (list == null) {
+    public ArrayList(Collection<? extends T> c) {
+        if (c == null) {
             throw new IllegalArgumentException("List shouldn't be NULL");
         }
 
         //noinspection unchecked
-        items = (T[]) new Object[list.size()];
-        size = list.size();
+        items = (T[]) new Object[c.size()];
+        size = c.size();
 
-        for (int i = 0; i < list.size(); i++) {
-            items[i] = list.get(i);
+        int index = 0;
+
+        for (T item : c) {
+            items[index] = item;
+            index++;
         }
     }
 
@@ -132,10 +135,6 @@ public class ArrayList<T> implements List<T> {
 
     @Override
     public boolean addAll(Collection<? extends T> c) {
-        if (c.isEmpty()) {
-            return false;
-        }
-
         return addAll(size, c);
     }
 
@@ -151,17 +150,21 @@ public class ArrayList<T> implements List<T> {
 
         System.arraycopy(items, index, items, index + c.size(), size - index);
 
-        int i = index;
+        int initialSize = size;
 
         for (T item : c) {
-            items[i] = item;
-            i++;
+            items[index] = item;
+            index++;
+            size++;
         }
 
-        modCount++;
-        size = items.length;
+        if (initialSize != size) {
+            modCount++;
 
-        return true;
+            return true;
+        }
+
+        return false;
     }
 
     @Override
@@ -183,19 +186,15 @@ public class ArrayList<T> implements List<T> {
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        if (c.isEmpty()) {
-            return false;
-        }
+        int initialSize = size;
 
-        int oldSize = size;
-
-        for (int i = oldSize - 1; i >= 0; i--) {
+        for (int i = initialSize - 1; i >= 0; i--) {
             if (!c.contains(items[i])) {
                 remove(i);
             }
         }
 
-        return size != oldSize;
+        return size != initialSize;
     }
 
     @Override
@@ -308,10 +307,10 @@ public class ArrayList<T> implements List<T> {
      * @param isUpperBoundsIncluded include in check upper bounds of array (include array.length() or not)
      */
     private void checkIndex(int index, boolean isUpperBoundsIncluded) {
-        int maxIndex = isUpperBoundsIncluded ? size + 1 : size;
+        int maxIndex = isUpperBoundsIncluded ? size : size - 1;
 
-        if (index < 0 || index >= maxIndex) {
-            throw new IndexOutOfBoundsException("Index \"" + index + "\" out of bounds 0.." + (maxIndex - 1) + ".");
+        if (index < 0 || index > maxIndex) {
+            throw new IndexOutOfBoundsException("Index \"" + index + "\" out of bounds 0.." + maxIndex + ".");
         }
     }
 

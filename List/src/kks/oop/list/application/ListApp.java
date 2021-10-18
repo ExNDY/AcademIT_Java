@@ -2,6 +2,9 @@ package kks.oop.list.application;
 
 import kks.oop.list.MyLinkedList;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class ListApp {
     public static void main(String[] args) {
         MyLinkedList<Integer> list1 = new MyLinkedList<>(5);
