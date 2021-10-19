@@ -17,4 +17,8 @@ public class TextUtil {
 
         return number.doubleValue();
     }
+
+    public static double roundToNearestHundred(double value) {
+        return Math.round(value * 100.0) / 100.0;
+    }
 }

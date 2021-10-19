@@ -1,6 +1,6 @@
 package kks.oop.temperature.model.scale;
 
-public class Kelvin implements Scale {
+public class KelvinScale implements Scale {
     @Override
     public double convertToBaseUnit(double value) {
         return value;

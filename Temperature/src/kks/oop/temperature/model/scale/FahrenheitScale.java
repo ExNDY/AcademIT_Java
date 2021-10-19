@@ -2,7 +2,7 @@ package kks.oop.temperature.model.scale;
 
 import static kks.oop.temperature.utils.Constants.ABSOLUTE_ZERO_CELSIUS;
 
-public class Fahrenheit implements Scale {
+public class FahrenheitScale implements Scale {
     @Override
     public double convertToBaseUnit(double value) {
         return (value - 32) / 1.8 - ABSOLUTE_ZERO_CELSIUS;

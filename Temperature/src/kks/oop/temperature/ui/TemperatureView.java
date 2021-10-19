@@ -1,9 +1,12 @@
-package kks.oop.temperature.ui.temperature_converter;
+package kks.oop.temperature.ui;
 
 import kks.oop.temperature.model.scale.Scale;
+import kks.oop.temperature.utils.TextUtil;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
+import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 public class TemperatureView {
     private JFrame frame;
@@ -16,14 +19,18 @@ public class TemperatureView {
     private JComboBox<Scale> scaleFromComboBox;
     private JComboBox<Scale> scaleToComboBox;
 
+    private ActionListener actionListener;
+
     public TemperatureView(String title, Scale[] scalesArray) {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception ignored) {
+        SwingUtilities.invokeLater(() -> {
+            try {
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            } catch (Exception ignored) {
 
-        }
+            }
 
-        initComponents(title, scalesArray);
+            initComponents(title, scalesArray);
+        });
     }
 
     private void initComponents(String title, Scale[] scalesArray) {
@@ -56,7 +63,7 @@ public class TemperatureView {
     }
 
     private void initLabel() {
-        label = new JLabel("Choose scales for convertation:");
+        label = new JLabel("Choose scales for conversion:");
     }
 
     private void initScaleFromComboBox(Scale[] scalesArray) {
@@ -89,6 +96,7 @@ public class TemperatureView {
 
         swapButton = new JButton("swap");
         swapButton.setIcon(swapIcon);
+        swapButton.addActionListener(actionListener);
     }
 
     private void initConvertButton() {
@@ -96,6 +104,7 @@ public class TemperatureView {
 
         convertButton = new JButton("Convert");
         convertButton.setIcon(convertIcon);
+        convertButton.addActionListener(actionListener);
     }
 
     private void initLayout() {
@@ -133,6 +142,10 @@ public class TemperatureView {
         );
     }
 
+    public void addActionListener(ActionListener listener) {
+        actionListener = listener;
+    }
+
     public Scale getScaleFrom() {
         return (Scale) scaleFromComboBox.getSelectedItem();
     }
@@ -141,75 +154,49 @@ public class TemperatureView {
         return (Scale) scaleToComboBox.getSelectedItem();
     }
 
-    public JFrame getFrame() {
-        return frame;
-    }
-
-    public void setFrame(JFrame frame) {
-        this.frame = frame;
-    }
-
-    public JPanel getPanel() {
-        return panel;
-    }
-
-    public void setPanel(JPanel panel) {
-        this.panel = panel;
-    }
-
-    public JLabel getLabel() {
-        return label;
-    }
-
-    public void setLabel(JLabel label) {
-        this.label = label;
-    }
-
-    public JTextField getInputTextField() {
-        return inputTextField;
-    }
-
-    public void setInputTextField(JTextField inputTextField) {
-        this.inputTextField = inputTextField;
-    }
-
-    public JTextField getOutputTextField() {
-        return outputTextField;
-    }
-
-    public void setOutputTextField(JTextField outputTextField) {
-        this.outputTextField = outputTextField;
-    }
-
     public JButton getSwapButton() {
         return swapButton;
-    }
-
-    public void setSwapButton(JButton swapButton) {
-        this.swapButton = swapButton;
     }
 
     public JButton getConvertButton() {
         return convertButton;
     }
 
-    public void setConvertButton(JButton convertButton) {
-        this.convertButton = convertButton;
+    public double getTemperature() {
+        return parseInputValue(inputTextField.getText());
     }
 
-    public JComboBox<Scale> getScaleFromComboBox() {
-        return scaleFromComboBox;
+    public void setConversionResult(double resultConversion) {
+        outputTextField.setText(String.valueOf(TextUtil.roundToNearestHundred(resultConversion)));
     }
 
-    public void setScaleFromComboBox(JComboBox<Scale> scaleFromComboBox) {
-        this.scaleFromComboBox = scaleFromComboBox;
+    public void swapScales() {
+        if (getScaleFrom().equals(getScaleTo())) {
+            return;
+        }
+
+        int fromIndex = scaleFromComboBox.getSelectedIndex();
+        scaleFromComboBox.setSelectedIndex(scaleToComboBox.getSelectedIndex());
+        scaleToComboBox.setSelectedIndex(fromIndex);
     }
 
-    public JComboBox<Scale> getScaleToComboBox() {
-        return scaleToComboBox;
-    }
+    private double parseInputValue(String input) {
+        input = input.trim();
 
-    public void setScaleToComboBox(JComboBox<Scale> scaleToComboBox) {
-        this.scaleToComboBox = scaleToComboBox;
+        double inputValue = 0.0;
+
+        if (!input.equals("")) {
+            try {
+                inputValue = TextUtil.parseDecimal(input);
+            } catch (NumberFormatException | ParseException ex) {
+                try {
+                    inputValue = Double.parseDouble(input.replaceAll(",", "."));
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Check the entered value: \"" + input + "\"", "ERROR: Wrong input format", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+
+        return inputValue;
     }
 }

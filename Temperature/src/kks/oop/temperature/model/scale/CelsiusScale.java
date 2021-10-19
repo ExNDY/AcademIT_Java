@@ -2,7 +2,7 @@ package kks.oop.temperature.model.scale;
 
 import static kks.oop.temperature.utils.Constants.ABSOLUTE_ZERO_CELSIUS;
 
-public class Celsius implements Scale {
+public class CelsiusScale implements Scale {
     @Override
     public double convertToBaseUnit(double value) {
         return value - ABSOLUTE_ZERO_CELSIUS;
