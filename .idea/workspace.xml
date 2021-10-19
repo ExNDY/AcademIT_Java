@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for Temperature Module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/controller/TemperatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/controller/TemperatureController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/TemperatureView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/TemperatureView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/utils/TextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/utils/TextUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,13 +162,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625003734943</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Rework Range task">
-      <created>1630419119539</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1630419119539</updated>
     </task>
     <task id="LOCAL-00010" summary="Rework Range task">
       <created>1630419264020</created>
@@ -506,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634678665090</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="fix for Temperature Module">
+      <created>1634679696310</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1634679696310</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -161,8 +161,8 @@ public class TemperatureView {
         return convertButton;
     }
 
-    public double getTemperature() {
-        return parseInputValue(inputTextField.getText());
+    public String getInputTemperature() {
+        return inputTextField.getText();
     }
 
     public void setConversionResult(double resultConversion) {
@@ -179,13 +179,7 @@ public class TemperatureView {
         scaleToComboBox.setSelectedIndex(fromIndex);
     }
 
-    private double parseInputValue(String input) {
-        try {
-            return TextUtil.parseStringToDouble(input);
-        } catch (NumberFormatException exception) {
-            JOptionPane.showMessageDialog(null, "Check the entered value: \"" + input + "\"", "ERROR: Wrong input format", JOptionPane.ERROR_MESSAGE);
-        }
-
-        return 0.0;
+    public void showErrorMessage(String message, String title) {
+        JOptionPane.showMessageDialog(panel, message, title, JOptionPane.ERROR_MESSAGE);
     }
 }
