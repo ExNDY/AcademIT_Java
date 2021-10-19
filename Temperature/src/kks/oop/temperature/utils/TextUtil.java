@@ -6,7 +6,27 @@ import java.text.ParsePosition;
 import java.util.Locale;
 
 public class TextUtil {
-    public static double parseDecimal(String input) throws ParseException {
+    public static double parseStringToDouble(String input) throws NumberFormatException {
+        input = input.trim();
+
+        double inputValue = 0.0;
+
+        if (!input.equals("")) {
+            try {
+                inputValue = TextUtil.parseDecimal(input);
+            } catch (NumberFormatException | ParseException ex) {
+                try {
+                    inputValue = Double.parseDouble(input.replaceAll(",", "."));
+                } catch (NumberFormatException e) {
+                    throw new NumberFormatException("error:" + e + " input value: " + input);
+                }
+            }
+        }
+
+        return inputValue;
+    }
+
+    private static double parseDecimal(String input) throws ParseException {
         NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.getDefault());
         ParsePosition parsePosition = new ParsePosition(0);
         Number number = numberFormat.parse(input, parsePosition);

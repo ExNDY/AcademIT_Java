@@ -6,7 +6,6 @@ import kks.oop.temperature.utils.TextUtil;
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 
 public class TemperatureView {
     private JFrame frame;
@@ -181,22 +180,12 @@ public class TemperatureView {
     }
 
     private double parseInputValue(String input) {
-        input = input.trim();
-
-        double inputValue = 0.0;
-
-        if (!input.equals("")) {
-            try {
-                inputValue = TextUtil.parseDecimal(input);
-            } catch (NumberFormatException | ParseException ex) {
-                try {
-                    inputValue = Double.parseDouble(input.replaceAll(",", "."));
-                } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Check the entered value: \"" + input + "\"", "ERROR: Wrong input format", JOptionPane.ERROR_MESSAGE);
-                }
-            }
+        try {
+            return TextUtil.parseStringToDouble(input);
+        } catch (NumberFormatException exception) {
+            JOptionPane.showMessageDialog(null, "Check the entered value: \"" + input + "\"", "ERROR: Wrong input format", JOptionPane.ERROR_MESSAGE);
         }
 
-        return inputValue;
+        return 0.0;
     }
 }
