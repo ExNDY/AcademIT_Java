@@ -3,8 +3,8 @@ package kks.oop.hashtable;
 import java.util.*;
 
 public class MyHashTable<T> implements Collection<T> {
-    private static final int DEFAULT_CAPACITY_SIZE = 10;
-    private static final int MINIMUM_CAPACITY_SIZE = 1;
+    private static final int DEFAULT_CAPACITY = 10;
+    private static final int MINIMUM_CAPACITY = 1;
     private static final double MAXIMUM_LOAD_FACTOR = 0.65;
 
     private LinkedList<T>[] lists;
@@ -13,12 +13,12 @@ public class MyHashTable<T> implements Collection<T> {
 
     public MyHashTable() {
         //noinspection unchecked
-        lists = (LinkedList<T>[]) new LinkedList[DEFAULT_CAPACITY_SIZE];
+        lists = (LinkedList<T>[]) new LinkedList[DEFAULT_CAPACITY];
     }
 
     public MyHashTable(int capacity) {
         if (capacity <= 0) {
-            throw new IllegalArgumentException("Wrong capacity size: " + capacity + ", shouldn't be less " + MINIMUM_CAPACITY_SIZE);
+            throw new IllegalArgumentException("Wrong capacity size: " + capacity + ", shouldn't be less " + MINIMUM_CAPACITY);
         }
 
         //noinspection unchecked
@@ -63,13 +63,19 @@ public class MyHashTable<T> implements Collection<T> {
 
     @Override
     public <E> E[] toArray(E[] array) {
+        if (array == null) {
+            throw new NullPointerException("Array shouldn't be NULL");
+        }
+
+        Object[] items = toArray();
+
         if (array.length < size) {
             //noinspection unchecked
-            array = (E[]) Arrays.copyOf(array, size, array.getClass());
+            return (E[]) Arrays.copyOf(items, size, array.getClass());
         }
 
         //noinspection SuspiciousSystemArraycopy
-        System.arraycopy(toArray(), 0, array, 0, size);
+        System.arraycopy(items, 0, array, 0, size);
 
         if (array.length > size) {
             array[size] = null;
@@ -88,7 +94,6 @@ public class MyHashTable<T> implements Collection<T> {
 
         lists[index].add(item);
         size++;
-        modCount++;
 
         checkAndIncreaseCapacity();
 
@@ -98,19 +103,19 @@ public class MyHashTable<T> implements Collection<T> {
     @Override
     public boolean remove(Object o) {
         if (size == 0) {
-            return false;
+            return true;
         }
 
         int index = getIndex(o);
 
-        if (lists[index] == null) {
-            return false;
+        if (lists[index].remove(o)) {
+            size--;
+            modCount++;
+
+            return true;
         }
 
-        size--;
-        modCount++;
-
-        return lists[index].remove(o);
+        return true;
     }
 
     @Override
@@ -156,15 +161,14 @@ public class MyHashTable<T> implements Collection<T> {
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        if (c.isEmpty()) {
-            return false;
-        }
-
         boolean wasChanged = false;
+        int initialListsLength;
 
         for (LinkedList<T> list : lists) {
-            if (list != null && list.retainAll(c)) {
+            if (list != null && list.retainAll(c) && (initialListsLength = lists.length) > 0) {
                 wasChanged = true;
+
+                size += list.size() - initialListsLength;
             }
         }
 
@@ -206,29 +210,33 @@ public class MyHashTable<T> implements Collection<T> {
         return getIndex(o, lists.length);
     }
 
-    private static int getIndex(Object o, int tableLength) {
-        return (o == null) ? 0 : Math.abs(o.hashCode() % tableLength);
+    private static int getIndex(Object o, int listsLength) {
+        return (o == null) ? 0 : Math.abs(o.hashCode() % listsLength);
     }
 
     private void checkAndIncreaseCapacity() {
-        if ((double) size / lists.length > MAXIMUM_LOAD_FACTOR) {
-            int newCapacity = lists.length * 2;
+        if ((double) size / lists.length < MAXIMUM_LOAD_FACTOR) {
+            return;
+        }
 
-            //noinspection unchecked
-            LinkedList<T>[] newTable = (LinkedList<T>[]) new LinkedList[newCapacity];
+        int newCapacity = lists.length * 2;
 
-            for (T item : this) {
-                int index = getIndex(item, newCapacity);
+        //noinspection unchecked
+        LinkedList<T>[] newLists = (LinkedList<T>[]) new LinkedList[newCapacity];
 
-                if (newTable[index] == null) {
-                    newTable[index] = new LinkedList<>();
-                }
+        for (T item : this) {
+            int index = getIndex(item, newCapacity);
 
-                newTable[index].add(item);
+            if (newLists[index] == null) {
+                newLists[index] = new LinkedList<>();
             }
 
-            lists = newTable;
+            newLists[index].add(item);
         }
+
+        modCount++;
+
+        lists = newLists;
     }
 
     private class MyHashTableIterator implements Iterator<T> {

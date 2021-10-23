@@ -245,12 +245,10 @@ public class Tree<T> {
 
         Deque<Node<T>> deque = new LinkedList<>();
 
-        Node<T> node = root;
-
-        deque.addFirst(node);
+        deque.addFirst(root);
 
         while (!deque.isEmpty()) {
-            node = deque.removeFirst();
+            Node<T> node = deque.removeFirst();
 
             consumer.accept(node.getValue());
 
