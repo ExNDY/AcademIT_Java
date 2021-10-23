@@ -56,7 +56,7 @@ public class ShapeApplication {
         }
 
         if (shapes.length == 0){
-            throw new ArrayIndexOutOfBoundsException("Wrong array size! Array of shapes shouldn't be EMPTY");
+            throw new IllegalArgumentException("Wrong array size! Array of shapes shouldn't be EMPTY");
         }
 
         if (shapes.length == 1) {
@@ -74,7 +74,7 @@ public class ShapeApplication {
         }
 
         if (shapes.length < 2) {
-            throw new ArrayIndexOutOfBoundsException("Wrong array size! The array is less than 2 in length. Current length: " + shapes.length);
+            throw new IllegalArgumentException("Wrong array size! The array is less than 2 in length. Current length: " + shapes.length);
         }
 
         Arrays.sort(shapes, new PerimeterComparator());

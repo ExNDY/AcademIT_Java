@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for Temperature Module">
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for Tree, HashTable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/kks/oop/tree/Tree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,13 +162,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625003734943</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Rework Range task">
-      <created>1630419384480</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1630419384480</updated>
     </task>
     <task id="LOCAL-00012" summary="Rework Range task">
       <created>1630419472662</created>
@@ -505,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634680477124</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="fix for Tree, HashTable">
+      <created>1635009862934</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1635009862935</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +554,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Small fix for Range module" />
     <MESSAGE value="ArrayListHome module" />
     <MESSAGE value="Added tree module, add sample application( BinaryTreeApp.java ) with test of result." />
     <MESSAGE value="fix for Shape module, added MyLinkedList (not final)" />
@@ -578,7 +578,8 @@
     <MESSAGE value="fix for HashTable" />
     <MESSAGE value="fix for ArrayList" />
     <MESSAGE value="fix for Temperature Module" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix for Temperature Module" />
+    <MESSAGE value="fix for Tree, HashTable" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix for Tree, HashTable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
