@@ -28,18 +28,18 @@ public class ArrayList<T> implements List<T> {
      */
     public ArrayList(Collection<? extends T> c) {
         if (c == null) {
-            throw new IllegalArgumentException("List shouldn't be NULL");
+            throw new IllegalArgumentException("Collection shouldn't be NULL");
         }
 
         //noinspection unchecked
         items = (T[]) new Object[c.size()];
         size = c.size();
 
-        int index = 0;
+        int i = 0;
 
         for (T item : c) {
-            items[index] = item;
-            index++;
+            items[i] = item;
+            i++;
         }
     }
 
@@ -150,21 +150,17 @@ public class ArrayList<T> implements List<T> {
 
         System.arraycopy(items, index, items, index + c.size(), size - index);
 
-        int initialSize = size;
+        int i = index;
 
         for (T item : c) {
-            items[index] = item;
-            index++;
-            size++;
+            items[i] = item;
+            i++;
         }
 
-        if (initialSize != size) {
-            modCount++;
+        size += c.size();
+        modCount++;
 
-            return true;
-        }
-
-        return false;
+        return true;
     }
 
     @Override
@@ -173,15 +169,15 @@ public class ArrayList<T> implements List<T> {
             return false;
         }
 
-        int oldSize = size;
+        int initialSize = size;
 
-        for (int i = oldSize - 1; i >= 0; i--) {
+        for (int i = initialSize - 1; i >= 0; i--) {
             if (c.contains(items[i])) {
                 remove(i);
             }
         }
 
-        return size != oldSize;
+        return size != initialSize;
     }
 
     @Override
