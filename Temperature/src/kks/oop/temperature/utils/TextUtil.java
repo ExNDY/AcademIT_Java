@@ -9,17 +9,19 @@ public class TextUtil {
     public static double parseStringToDouble(String input) throws NumberFormatException {
         input = input.trim();
 
-        double inputValue = 0.0;
+        if (input.equals("")) {
+            throw new NumberFormatException("Entered value is EMPTY");
+        }
 
-        if (!input.equals("")) {
+        double inputValue;
+
+        try {
+            inputValue = TextUtil.parseDecimal(input);
+        } catch (NumberFormatException | ParseException ex) {
             try {
-                inputValue = TextUtil.parseDecimal(input);
-            } catch (NumberFormatException | ParseException ex) {
-                try {
-                    inputValue = Double.parseDouble(input.replaceAll(",", "."));
-                } catch (NumberFormatException e) {
-                    throw new NumberFormatException("error:" + e + " input value: " + input);
-                }
+                inputValue = Double.parseDouble(input.replaceAll(",", "."));
+            } catch (NumberFormatException e) {
+                throw new NumberFormatException("error:" + e + " input value: " + input);
             }
         }
 

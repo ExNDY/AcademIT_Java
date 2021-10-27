@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for ShapeApplication">
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for ArrayList.java">
+      <change afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/temperature_frame/TemperatureView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/controller/TemperatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/controller/TemperatureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/TemperatureView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/ui/temperature_frame/TemperatureViewImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/utils/TextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature/src/kks/oop/temperature/utils/TextUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,13 +165,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625003734943</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Rework Range task. Change getDifferencem getUnion, getIntersection. Rewrite RangeApplication.java">
-      <created>1630428194373</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1630428194374</updated>
     </task>
     <task id="LOCAL-00014" summary="Rework RangeApplication.java">
       <created>1632242342713</created>
@@ -505,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635010089202</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="fix for ArrayList.java">
+      <created>1635078194659</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1635078194660</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -553,7 +557,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added tree module, add sample application( BinaryTreeApp.java ) with test of result." />
     <MESSAGE value="fix for Shape module, added MyLinkedList (not final)" />
     <MESSAGE value="added Module List, ListApp" />
     <MESSAGE value="added Hashtable module, fix for ArraylistHome" />
@@ -578,7 +581,8 @@
     <MESSAGE value="fix for Temperature Module" />
     <MESSAGE value="fix for Tree, HashTable" />
     <MESSAGE value="fix for ShapeApplication" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix for ShapeApplication" />
+    <MESSAGE value="fix for ArrayList.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix for ArrayList.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

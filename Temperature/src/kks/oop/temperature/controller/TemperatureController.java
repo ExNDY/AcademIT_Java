@@ -2,7 +2,7 @@ package kks.oop.temperature.controller;
 
 import kks.oop.temperature.model.TemperatureConverter;
 import kks.oop.temperature.model.scale.Scale;
-import kks.oop.temperature.ui.TemperatureView;
+import kks.oop.temperature.ui.temperature_frame.TemperatureView;
 import kks.oop.temperature.utils.TextUtil;
 
 import java.awt.event.ActionEvent;
@@ -16,20 +16,12 @@ public class TemperatureController implements ActionListener {
         this.view = view;
         this.converter = converter;
 
-        view.addActionListener(this);
+        view.addConvertButtonActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Object source = e.getSource();
-
-        if (view.getSwapButton().equals(source)) {
-            view.swapScales();
-        }
-
-        if (view.getConvertButton().equals(source)) {
-            convertTemperature(parseValue(view.getInputTemperature()), view.getScaleFrom(), view.getScaleTo());
-        }
+        convertTemperature(parseValue(view.getInputTemperature()), view.getScaleFrom(), view.getScaleTo());
     }
 
     private void convertTemperature(double temperature, Scale fromScale, Scale toScale) {
@@ -40,7 +32,7 @@ public class TemperatureController implements ActionListener {
         try {
             return TextUtil.parseStringToDouble(input);
         } catch (NumberFormatException exception) {
-            view.showErrorMessage("Check the entered value: \"" + input + "\"", "ERROR: Wrong input format");
+            view.showErrorMessage("Check the entered value: \"" + input + "\".", "ERROR: Wrong input format");
         }
 
         return 0.0;

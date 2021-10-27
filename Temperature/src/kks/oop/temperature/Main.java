@@ -6,21 +6,22 @@ import kks.oop.temperature.model.scale.CelsiusScale;
 import kks.oop.temperature.model.scale.FahrenheitScale;
 import kks.oop.temperature.model.scale.KelvinScale;
 import kks.oop.temperature.model.scale.Scale;
-import kks.oop.temperature.ui.TemperatureView;
+import kks.oop.temperature.ui.temperature_frame.TemperatureView;
+import kks.oop.temperature.ui.temperature_frame.TemperatureViewImpl;
 
 public class Main {
     public static void main(String[] args) {
-        createAndShowGUI();
+        Scale[] scales = {
+                new KelvinScale(),
+                new CelsiusScale(),
+                new FahrenheitScale()
+        };
+
+        createAndShowGUI(scales);
     }
 
-    private static void createAndShowGUI() {
-        TemperatureView view = new TemperatureView("Temperature converter", getScales);
+    private static void createAndShowGUI(Scale[] scales) {
+        TemperatureView view = new TemperatureViewImpl("Temperature converter", scales);
         new TemperatureController(view, new TemperatureConverter());
     }
-
-    private static final Scale[] getScales = {
-            new KelvinScale(),
-            new CelsiusScale(),
-            new FahrenheitScale()
-    };
 }

@@ -1,4 +1,4 @@
-package kks.oop.temperature.ui;
+package kks.oop.temperature.ui.temperature_frame;
 
 import kks.oop.temperature.model.scale.Scale;
 import kks.oop.temperature.utils.TextUtil;
@@ -7,7 +7,7 @@ import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.event.ActionListener;
 
-public class TemperatureView {
+public class TemperatureViewImpl implements TemperatureView {
     private JFrame frame;
     private JPanel panel;
     private JLabel label;
@@ -20,7 +20,7 @@ public class TemperatureView {
 
     private ActionListener actionListener;
 
-    public TemperatureView(String title, Scale[] scalesArray) {
+    public TemperatureViewImpl(String title, Scale[] scalesArray) {
         SwingUtilities.invokeLater(() -> {
             try {
                 UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -30,6 +30,36 @@ public class TemperatureView {
 
             initComponents(title, scalesArray);
         });
+    }
+
+    @Override
+    public Scale getScaleFrom() {
+        return (Scale) scaleFromComboBox.getSelectedItem();
+    }
+
+    @Override
+    public Scale getScaleTo() {
+        return (Scale) scaleToComboBox.getSelectedItem();
+    }
+
+    @Override
+    public String getInputTemperature() {
+        return inputTextField.getText();
+    }
+
+    @Override
+    public void setConversionResult(double resultConversion) {
+        outputTextField.setText(String.valueOf(TextUtil.roundToNearestHundred(resultConversion)));
+    }
+
+    @Override
+    public void addConvertButtonActionListener(ActionListener listener) {
+        actionListener = listener;
+    }
+
+    @Override
+    public void showErrorMessage(String message, String title) {
+        JOptionPane.showMessageDialog(panel, message, title, JOptionPane.ERROR_MESSAGE);
     }
 
     private void initComponents(String title, Scale[] scalesArray) {
@@ -95,7 +125,7 @@ public class TemperatureView {
 
         swapButton = new JButton("swap");
         swapButton.setIcon(swapIcon);
-        swapButton.addActionListener(actionListener);
+        swapButton.addActionListener(e -> swapScales());
     }
 
     private void initConvertButton() {
@@ -141,35 +171,7 @@ public class TemperatureView {
         );
     }
 
-    public void addActionListener(ActionListener listener) {
-        actionListener = listener;
-    }
-
-    public Scale getScaleFrom() {
-        return (Scale) scaleFromComboBox.getSelectedItem();
-    }
-
-    public Scale getScaleTo() {
-        return (Scale) scaleToComboBox.getSelectedItem();
-    }
-
-    public JButton getSwapButton() {
-        return swapButton;
-    }
-
-    public JButton getConvertButton() {
-        return convertButton;
-    }
-
-    public String getInputTemperature() {
-        return inputTextField.getText();
-    }
-
-    public void setConversionResult(double resultConversion) {
-        outputTextField.setText(String.valueOf(TextUtil.roundToNearestHundred(resultConversion)));
-    }
-
-    public void swapScales() {
+    private void swapScales() {
         if (getScaleFrom().equals(getScaleTo())) {
             return;
         }
@@ -177,9 +179,5 @@ public class TemperatureView {
         int fromIndex = scaleFromComboBox.getSelectedIndex();
         scaleFromComboBox.setSelectedIndex(scaleToComboBox.getSelectedIndex());
         scaleToComboBox.setSelectedIndex(fromIndex);
-    }
-
-    public void showErrorMessage(String message, String title) {
-        JOptionPane.showMessageDialog(panel, message, title, JOptionPane.ERROR_MESSAGE);
     }
 }
