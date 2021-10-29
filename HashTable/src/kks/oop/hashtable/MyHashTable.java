@@ -103,10 +103,14 @@ public class MyHashTable<T> implements Collection<T> {
     @Override
     public boolean remove(Object o) {
         if (size == 0) {
-            return true;
+            return false;
         }
 
         int index = getIndex(o);
+
+        if (lists[index] == null) {
+            return false;
+        }
 
         if (lists[index].remove(o)) {
             size--;
@@ -115,7 +119,7 @@ public class MyHashTable<T> implements Collection<T> {
             return true;
         }
 
-        return true;
+        return false;
     }
 
     @Override
@@ -162,13 +166,18 @@ public class MyHashTable<T> implements Collection<T> {
     @Override
     public boolean retainAll(Collection<?> c) {
         boolean wasChanged = false;
-        int initialListsLength;
 
         for (LinkedList<T> list : lists) {
-            if (list != null && list.retainAll(c) && (initialListsLength = lists.length) > 0) {
+            if (list == null) {
+                continue;
+            }
+
+            int oldListSize = lists.length;
+
+            if (list.retainAll(c) && oldListSize > 0) {
                 wasChanged = true;
 
-                size += list.size() - initialListsLength;
+                size += list.size() - oldListSize;
             }
         }
 
@@ -215,6 +224,8 @@ public class MyHashTable<T> implements Collection<T> {
     }
 
     private void checkAndIncreaseCapacity() {
+        modCount++;
+
         if ((double) size / lists.length < MAXIMUM_LOAD_FACTOR) {
             return;
         }
@@ -233,8 +244,6 @@ public class MyHashTable<T> implements Collection<T> {
 
             newLists[index].add(item);
         }
-
-        modCount++;
 
         lists = newLists;
     }
