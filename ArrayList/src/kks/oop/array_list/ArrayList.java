@@ -4,7 +4,6 @@ import java.util.*;
 
 public class ArrayList<T> implements List<T> {
     private static final int DEFAULT_CAPACITY = 10;
-    private static final double MAXIMUM_LOAD_FACTOR = 0.65;
 
     private T[] items;
     private int size;
