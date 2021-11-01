@@ -4,10 +4,16 @@ import java.util.*;
 
 public class ArrayList<T> implements List<T> {
     private static final int DEFAULT_CAPACITY = 10;
+    private static final double MAXIMUM_LOAD_FACTOR = 0.65;
 
     private T[] items;
     private int size;
     private int modCount;
+
+    public ArrayList() {
+        //noinspection unchecked
+        items = (T[]) new Object[DEFAULT_CAPACITY];
+    }
 
     /***
      * Constructor for empty ArrayList with current capacity
@@ -323,7 +329,7 @@ public class ArrayList<T> implements List<T> {
     }
 
     private void increaseCapacity() {
-        int newCapacity = modCount != 0 ? items.length * 2 : DEFAULT_CAPACITY;
+        int newCapacity = Math.max(items.length * 2, DEFAULT_CAPACITY);
 
         items = Arrays.copyOf(items, newCapacity);
     }

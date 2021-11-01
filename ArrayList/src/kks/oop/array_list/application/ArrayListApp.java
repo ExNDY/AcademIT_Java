@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 public class ArrayListApp {
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>(6);
+        ArrayList<Integer> list = new ArrayList<>(2);
 
         list.add(404);
         list.add(303);

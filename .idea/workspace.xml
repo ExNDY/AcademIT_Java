@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for Temperature">
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for HashTable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/application/ArrayListApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/application/ArrayListApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,7 @@
       <recent name="kks.oop.temperature.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HashTableApp">
+  <component name="RunManager" selected="Application.ArrayListApp">
     <configuration name="ArrayListApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kks.oop.array_list.application.ArrayListApp" />
       <module name="ArrayList" />
@@ -145,9 +146,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArrayListApp" />
         <item itemvalue="Application.HashTableApp" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.ArrayListApp" />
         <item itemvalue="Application.ListApp" />
         <item itemvalue="Application.BinaryTreeApp" />
       </list>
@@ -161,13 +162,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625003734943</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Rework RangeApplication.java">
-      <created>1632242582341</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1632242582341</updated>
     </task>
     <task id="LOCAL-00016" summary="Rewrite Range: getDifference, getUnion, getIntersection&#10;Rewrite ShapeApplication">
       <created>1632300612314</created>
@@ -505,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635361491991</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="fix for HashTable">
+      <created>1635542670384</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1635542670384</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -571,14 +572,14 @@
     <MESSAGE value="fix for Shapes" />
     <MESSAGE value="fix for Tree Module" />
     <MESSAGE value="fix for List" />
-    <MESSAGE value="fix for HashTable" />
     <MESSAGE value="fix for ArrayList" />
     <MESSAGE value="fix for Temperature Module" />
     <MESSAGE value="fix for Tree, HashTable" />
     <MESSAGE value="fix for ShapeApplication" />
     <MESSAGE value="fix for ArrayList.java" />
     <MESSAGE value="fix for Temperature" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix for Temperature" />
+    <MESSAGE value="fix for HashTable" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix for HashTable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -587,6 +588,21 @@
           <url>file://$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/application/HashTableApp.java</url>
           <line>19</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java</url>
+          <line>237</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java</url>
+          <line>311</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java</url>
+          <line>332</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
