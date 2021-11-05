@@ -93,6 +93,7 @@ public class MyHashTable<T> implements Collection<T> {
         }
 
         lists[index].add(item);
+        modCount++;
         size++;
 
         checkAndIncreaseCapacity();
@@ -168,16 +169,14 @@ public class MyHashTable<T> implements Collection<T> {
         boolean wasChanged = false;
 
         for (LinkedList<T> list : lists) {
-            if (list == null) {
-                continue;
-            }
+            if (list != null){
+                int oldListSize = list.size();
 
-            int oldListSize = lists.length;
+                if (list.retainAll(c)) {
+                    wasChanged = true;
 
-            if (list.retainAll(c) && oldListSize > 0) {
-                wasChanged = true;
-
-                size += list.size() - oldListSize;
+                    size += list.size() - oldListSize;
+                }
             }
         }
 
@@ -224,8 +223,6 @@ public class MyHashTable<T> implements Collection<T> {
     }
 
     private void checkAndIncreaseCapacity() {
-        modCount++;
-
         if ((double) size / lists.length < MAXIMUM_LOAD_FACTOR) {
             return;
         }
@@ -246,6 +243,8 @@ public class MyHashTable<T> implements Collection<T> {
         }
 
         lists = newLists;
+
+        modCount++;
     }
 
     private class MyHashTableIterator implements Iterator<T> {

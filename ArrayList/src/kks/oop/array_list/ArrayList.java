@@ -328,7 +328,7 @@ public class ArrayList<T> implements List<T> {
     }
 
     private void increaseCapacity() {
-        int newCapacity = Math.max(items.length * 2, DEFAULT_CAPACITY);
+        int newCapacity = items.length != 0 ? items.length : DEFAULT_CAPACITY;
 
         items = Arrays.copyOf(items, newCapacity);
     }
