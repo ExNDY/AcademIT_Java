@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for ArrayList.java(increaseCapacity, add empty constructor)">
+    <list default="true" id="62cef9db-7593-4434-a0a0-c48bd32b8f26" name="Default Changelist" comment="fix for ArrayList, HashTable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayList/src/kks/oop/array_list/ArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/HashTable/src/kks/oop/hashtable/MyHashTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,13 +160,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625003734943</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Rewrite ShapeApplication, override hashcode,toString, equals for shapes">
-      <created>1632306335744</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1632306335744</updated>
     </task>
     <task id="LOCAL-00019" summary="Rewrite ShapeApplication, override hashcode,toString, equals for shapes">
       <created>1632306383008</created>
@@ -506,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635793472735</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="fix for ArrayList, HashTable">
+      <created>1636078878100</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1636078878101</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added Hashtable module, fix for ArraylistHome" />
     <MESSAGE value="some fix for Vector module" />
     <MESSAGE value="some fix for Lambda module" />
     <MESSAGE value="some fix for ArrayList module" />
@@ -579,7 +576,8 @@
     <MESSAGE value="fix for Temperature" />
     <MESSAGE value="fix for HashTable" />
     <MESSAGE value="fix for ArrayList.java(increaseCapacity, add empty constructor)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix for ArrayList.java(increaseCapacity, add empty constructor)" />
+    <MESSAGE value="fix for ArrayList, HashTable" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix for ArrayList, HashTable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

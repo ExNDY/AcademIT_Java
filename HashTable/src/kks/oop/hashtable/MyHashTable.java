@@ -169,7 +169,7 @@ public class MyHashTable<T> implements Collection<T> {
         boolean wasChanged = false;
 
         for (LinkedList<T> list : lists) {
-            if (list != null){
+            if (list != null) {
                 int oldListSize = list.size();
 
                 if (list.retainAll(c)) {
